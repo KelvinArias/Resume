@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Home from "./Home";
+import "./App.css";
+import cx from "classnames";
 
 function App() {
+  const [navigation, setNavigation] = useState("Home");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className={cx("Content", navigation)}>
+        <Home navigation={navigation} setNavigation={setNavigation} />
+      </div>
+      <div className="Footer">
+        <button
+          className={cx("Btn", { Selected: navigation === "Contact" })}
+          type="button"
+          onClick={() => setNavigation("Contact")}
         >
-          Learn React
-        </a>
-      </header>
+          Contact
+        </button>
+        <button
+          className={cx("Btn", { Selected: navigation === "Home" })}
+          type="button"
+          onClick={() => setNavigation("Home")}
+        >
+          Home
+        </button>
+        <button
+          className={cx("Btn", { Selected: navigation === "Work" })}
+          type="button"
+          onClick={() => setNavigation("Work")}
+        >
+          Work
+        </button>
+      </div>
     </div>
   );
 }
