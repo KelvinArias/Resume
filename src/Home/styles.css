@@ -1,0 +1,192 @@
+.Center,
+.HomeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.HomeContainer {
+  width: 100vw;
+  position: relative;
+}
+
+.Center {
+  max-width: 300px;
+  max-height: 300px;
+  position: relative;
+}
+
+.Center::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 300px);
+  height: calc(100% + 300px);
+  border-radius: 50%;
+  border: 1px solid #7f7f7f;
+}
+
+.Center img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 40%
+  );
+}
+
+.Moon {
+  position: absolute;
+  top: 50%;
+  width: 350px;
+  height: 350px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.Moon .Ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  border-radius: 50%;
+  border: 10px solid #ffffff;
+  transition: 0.3s;
+}
+
+.Moon:hover .Ring {
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+}
+
+.Left {
+  left: -175px;
+}
+
+.Right {
+  right: -175px;
+}
+
+.Curve {
+  background: transparent;
+  position: absolute;
+  right: -204px;
+  top: 35px;
+  z-index: 2;
+}
+
+.Curve path {
+  stroke-width: 10;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.Information {
+  position: absolute;
+  left: -300px;
+  color: white;
+  top: 10px;
+}
+
+.Hello {
+  font-size: 72px;
+  margin: 0;
+  margin-bottom: 20px;
+  position: relative;
+  margin-left: -5px;
+}
+
+.Hello::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: #ffffff;
+  bottom: -5px;
+  left: 4px;
+}
+
+.Abilities {
+  position: absolute;
+  right: -330px;
+  color: white;
+  top: 10px;
+  list-style: none;
+  margin: 20px 0 0;
+}
+
+.Abilities li {
+  margin-bottom: 5px;
+}
+
+.Abilities li:first-child {
+  margin-left: -12px;
+}
+
+.Abilities li:nth-child(2) {
+  margin-left: -6px;
+}
+
+.Abilities li:nth-child(4) {
+  margin-left: 3px;
+}
+
+.Abilities li:last-child {
+  margin-left: 6px;
+}
+
+.Presentation {
+  margin: 0;
+}
+
+.Play {
+  position: absolute;
+  bottom: -75px;
+  right: -175px;
+  cursor: pointer;
+}
+
+.Play svg {
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.Play path {
+  fill: #ffffff;
+  transition: 0.3s;
+}
+
+.Play:hover svg {
+  background-color: #ffffff;
+}
+
+.Play:hover path {
+  fill: #000000;
+}
+
+.Play .Tooltip {
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  right: -100px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.Play:hover .Tooltip {
+  opacity: 1;
+}
