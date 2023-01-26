@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { OrbitControls, useTexture } from "@react-three/drei";
 import { LUTPass } from "three-stdlib";
@@ -6,6 +6,7 @@ import image from "../image.png";
 import moon from "../moon.jpg";
 import PropTypes from "prop-types";
 import "./styles.css";
+import cx from "classnames";
 extend({ LUTPass });
 
 function Moon({ direction }) {
@@ -37,6 +38,19 @@ function Sphere({ direction }) {
 }
 
 const Home = ({ navigation, setNavigation }) => {
+  const [showVideo, setShowVideo] = useState({
+    showContainer: false,
+    showPlayer: false,
+  });
+
+  useEffect(() => {
+    if (showVideo.showContainer && !showVideo.showPlayer) {
+      setTimeout(() => {
+        setShowVideo({ ...showVideo, showPlayer: true });
+      }, 600);
+    }
+  }, [showVideo]);
+
   return (
     <div className="HomeContainer">
       <div
@@ -88,7 +102,10 @@ const Home = ({ navigation, setNavigation }) => {
           <li>Javascript Tester</li>
           <li>Passionate programmer</li>
         </ul>
-        <div className="Play">
+        <div
+          className="Play"
+          onClick={() => setShowVideo({ ...showVideo, showContainer: true })}
+        >
           <svg
             width="50px"
             height="50px"
@@ -99,6 +116,25 @@ const Home = ({ navigation, setNavigation }) => {
           </svg>
           <p className="Tooltip">Presentation</p>
         </div>
+      </div>
+      <div
+        className={cx("VideoContainer", {
+          ShowVideoContainer: showVideo.showContainer,
+          ShowPlayer: showVideo.showPlayer,
+        })}
+        onClick={() =>
+          setShowVideo({ showContainer: false, showPlayer: false })
+        }
+      >
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/nhvC5JqO5I8"
+          title="YouTube video player"
+          frameborder="0"
+          allow="autoplay; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   );

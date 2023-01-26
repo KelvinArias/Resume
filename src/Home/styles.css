@@ -190,3 +190,33 @@
 .Play:hover .Tooltip {
   opacity: 1;
 }
+
+.VideoContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 100%;
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 0;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ShowVideoContainer {
+  width: 100vw;
+  height: 100vw;
+  border-radius: 0;
+}
+
+.VideoContainer iframe {
+  display: none;
+}
+
+.ShowPlayer iframe {
+  display: block;
+}
