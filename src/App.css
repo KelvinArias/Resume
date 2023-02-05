@@ -1,32 +1,33 @@
-.App {
+.app {
   background-color: black;
   width: 100vw;
   overflow: hidden;
   height: 100%;
   margin: 0;
   padding: 0;
+  color: #ffffff;
 }
 
-.Content {
+.content {
   width: 300vw;
   position: relative;
   transition: 1s;
-  z-index: 2;
+  display: flex;
 }
 
-.Contact {
+.contact {
   transform: translateX(100vw);
 }
 
-.Home {
+.home {
   transform: translateX(0);
 }
 
-.Work {
+.work {
   transform: translateX(-100vw);
 }
 
-.Footer {
+.footer {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -37,14 +38,14 @@
   z-index: 1;
 }
 
-.Footer .Btn {
-  color: #fff;
+.footer .btn {
+  color: #ffffff;
   margin-left: 5px;
   background-color: transparent;
   font-size: 16px;
   cursor: pointer;
 }
 
-.Footer .Selected {
+.footer .selected {
   color: aqua;
 }

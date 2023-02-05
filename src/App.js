@@ -1,34 +1,36 @@
 import { useState } from "react";
 import Home from "./Home";
+import Work from "./Work";
 import "./App.css";
 import cx from "classnames";
 
 function App() {
-  const [navigation, setNavigation] = useState("Home");
+  const [navigation, setNavigation] = useState("home");
   return (
-    <div className="App">
-      <div className={cx("Content", navigation)}>
+    <div className="app">
+      <div className={cx("content", navigation)}>
         <Home navigation={navigation} setNavigation={setNavigation} />
+        <Work navigation={navigation} />
       </div>
-      <div className="Footer">
+      <div className="footer">
         <button
-          className={cx("Btn", { Selected: navigation === "Contact" })}
+          className={cx("btn", { Selected: navigation === "contact" })}
           type="button"
-          onClick={() => setNavigation("Contact")}
+          onClick={() => setNavigation("contact")}
         >
           Contact
         </button>
         <button
-          className={cx("Btn", { Selected: navigation === "Home" })}
+          className={cx("btn", { Selected: navigation === "home" })}
           type="button"
-          onClick={() => setNavigation("Home")}
+          onClick={() => setNavigation("home")}
         >
           Home
         </button>
         <button
-          className={cx("Btn", { Selected: navigation === "Work" })}
+          className={cx("btn", { Selected: navigation === "work" })}
           type="button"
-          onClick={() => setNavigation("Work")}
+          onClick={() => setNavigation("work")}
         >
           Work
         </button>

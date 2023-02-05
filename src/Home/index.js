@@ -52,30 +52,30 @@ const Home = ({ navigation, setNavigation }) => {
   }, [showVideo]);
 
   return (
-    <div className="HomeContainer">
+    <div className={cx("homeContainer", { isNotHome: navigation !== "home" })}>
       <div
         onClick={() =>
-          navigation === "Contact"
-            ? setNavigation("Home")
-            : setNavigation("Contact")
+          navigation === "contact"
+            ? setNavigation("home")
+            : setNavigation("contact")
         }
-        className="Moon Left"
+        className="moon left"
       >
-        <div className="Ring" />
+        <div className="ring" />
         <Moon direction={-0.001} />
       </div>
       <div
         onClick={() =>
-          navigation === "Work" ? setNavigation("Home") : setNavigation("Work")
+          navigation === "work" ? setNavigation("home") : setNavigation("work")
         }
-        className="Moon Right"
+        className="moon right"
       >
-        <div className="Ring" />
+        <div className="ring" />
         <Moon direction={0.001} />
       </div>
-      <div className="Center">
+      <div className="center">
         <svg
-          className="Curve"
+          className="curve"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 499 499"
           width="200"
@@ -83,19 +83,26 @@ const Home = ({ navigation, setNavigation }) => {
           preserveAspectRatio="xMidYMid meet"
         >
           <g>
-            <path d="M313,13 C355,95 370,300 366,300" />
+            <path d="M312,13 C360,90 380,300 348,450">
+              {/*<animate
+                attributeName="d"
+                values="M312,13 C360,90 380,300 348,450; M312,13 C312,20 330,50 350,60"
+                dur="1s"
+                repeatCount="1"
+      />*/}
+            </path>
           </g>
         </svg>
-        <div className="Mask Top" />
-        <div className="Mask Bottom" />
+        <div className="mask top" />
+        <div className="mask bottom" />
         <img src={image} alt="perfil" />
-        <div className="Information">
-          <h1 className="Hello">Hello.</h1>
-          <p className="Presentation">
+        <div className="information">
+          <h1 className="hello">Hello.</h1>
+          <p className="presentation">
             I'm Kelvin Arias and <br /> this is my journey.
           </p>
         </div>
-        <ul className="Abilities">
+        <ul className="abilities">
           <li>I am a</li>
           <li>Full stack developer</li>
           <li>M.E.R.N Expert</li>
@@ -103,7 +110,7 @@ const Home = ({ navigation, setNavigation }) => {
           <li>Passionate programmer</li>
         </ul>
         <div
-          className="Play"
+          className="play"
           onClick={() => setShowVideo({ ...showVideo, showContainer: true })}
         >
           <svg
@@ -114,13 +121,13 @@ const Home = ({ navigation, setNavigation }) => {
           >
             <path d="M9.5 15.584V8.416a.5.5 0 01.77-.42l5.576 3.583a.5.5 0 010 .842l-5.576 3.584a.5.5 0 01-.77-.42z" />
           </svg>
-          <p className="Tooltip">Presentation</p>
+          <p className="tooltip">Presentation</p>
         </div>
       </div>
       <div
-        className={cx("VideoContainer", {
-          ShowVideoContainer: showVideo.showContainer,
-          ShowPlayer: showVideo.showPlayer,
+        className={cx("videoContainer", {
+          showVideoContainer: showVideo.showContainer,
+          showPlayer: showVideo.showPlayer,
         })}
         onClick={() =>
           setShowVideo({ showContainer: false, showPlayer: false })

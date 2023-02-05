@@ -1,5 +1,5 @@
-.Center,
-.HomeContainer {
+.center,
+.homeContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,18 +7,19 @@
   height: 100vh;
 }
 
-.HomeContainer {
+.homeContainer {
   width: 100vw;
   position: relative;
+  z-index: 2;
 }
 
-.Center {
+.center {
   max-width: 300px;
   max-height: 300px;
   position: relative;
 }
 
-.Center::after {
+.center::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -30,7 +31,7 @@
   border: 1px solid #7f7f7f;
 }
 
-.Center img {
+.center img {
   max-width: 100%;
   max-height: 100%;
   border-radius: 50%;
@@ -42,7 +43,7 @@
   );
 }
 
-.Moon {
+.moon {
   position: absolute;
   top: 50%;
   width: 350px;
@@ -51,7 +52,7 @@
   cursor: pointer;
 }
 
-.Moon .Ring {
+.moon .ring {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -63,20 +64,20 @@
   transition: 0.3s;
 }
 
-.Moon:hover .Ring {
+.moon:hover .ring {
   width: calc(100% - 30px);
   height: calc(100% - 30px);
 }
 
-.Left {
+.left {
   left: -175px;
 }
 
-.Right {
+.right {
   right: -175px;
 }
 
-.Curve {
+.curve {
   background: transparent;
   position: absolute;
   right: -204px;
@@ -84,21 +85,21 @@
   z-index: 2;
 }
 
-.Curve path {
+.curve path {
   stroke-width: 10;
   stroke: #ffffff;
   stroke-linecap: round;
   fill: none;
 }
 
-.Information {
+.information {
   position: absolute;
   left: -300px;
   color: white;
   top: 10px;
 }
 
-.Hello {
+.hello {
   font-size: 72px;
   margin: 0;
   margin-bottom: 20px;
@@ -106,77 +107,79 @@
   margin-left: -5px;
 }
 
-.Hello::after {
+.hello::after {
   content: "";
   position: absolute;
-  width: 40px;
+  width: 50px;
   height: 4px;
   background-color: #ffffff;
   bottom: -5px;
   left: 4px;
+  transition: 1s;
 }
 
-.Abilities {
+.abilities {
   position: absolute;
   right: -330px;
   color: white;
-  top: 10px;
+  top: 35px;
   list-style: none;
   margin: 20px 0 0;
 }
 
-.Abilities li {
-  margin-bottom: 5px;
+.abilities li {
+  margin-bottom: 10px;
+  transition: 1s;
 }
 
-.Abilities li:first-child {
-  margin-left: -12px;
+.abilities li:nth-child(2) {
+  margin-left: 5px;
 }
 
-.Abilities li:nth-child(2) {
-  margin-left: -6px;
+.abilities li:nth-child(3) {
+  margin-left: 8px;
 }
 
-.Abilities li:nth-child(4) {
-  margin-left: 3px;
+.abilities li:nth-child(4) {
+  margin-left: 10px;
 }
 
-.Abilities li:last-child {
+.abilities li:last-child {
   margin-left: 6px;
 }
 
-.Presentation {
+.presentation {
   margin: 0;
 }
 
-.Play {
+.play {
   position: absolute;
   bottom: -75px;
   right: -175px;
   cursor: pointer;
 }
 
-.Play svg {
+.play svg {
   border: 3px solid #ffffff;
   border-radius: 50%;
   box-sizing: border-box;
   transition: 0.3s;
 }
 
-.Play path {
+.play path {
   fill: #ffffff;
   transition: 0.3s;
 }
 
-.Play:hover svg {
+.play:hover svg {
   background-color: #ffffff;
 }
 
-.Play:hover path {
+.play:hover path {
   fill: #000000;
 }
 
-.Play .Tooltip {
+.play .tooltip {
   color: #ffffff;
   position: absolute;
   top: 50%;
@@ -187,11 +190,11 @@
   transition: 0.3s;
 }
 
-.Play:hover .Tooltip {
+.play:hover .tooltip {
   opacity: 1;
 }
 
-.VideoContainer {
+.videoContainer {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -207,16 +210,31 @@
   align-items: center;
 }
 
-.ShowVideoContainer {
+.showVideoContainer {
   width: 100vw;
   height: 100vw;
   border-radius: 0;
 }
 
-.VideoContainer iframe {
+.videoContainer iframe {
   display: none;
 }
 
-.ShowPlayer iframe {
+.showPlayer iframe {
   display: block;
+}
+
+/* IsNotHome */
+
+.isNotHome .hello::after {
+  width: 0;
+}
+
+.isNotHome .abilities li {
+  opacity: 0;
+}
+
+.isNotHome .abilities li:nth-child(1n + 2) {
+  margin-left: 0px;
+  margin-top: -30px;
 }
