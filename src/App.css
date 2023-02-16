@@ -6,6 +6,16 @@
   margin: 0;
   padding: 0;
   color: #ffffff;
+  position: relative;
+}
+
+.cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  background: #00000040;
+  border-radius: 50%;
 }
 
 .content {
@@ -43,7 +53,8 @@
   margin-left: 5px;
   background-color: transparent;
   font-size: 16px;
-  cursor: pointer;
+  cursor: none;
+  border: none;
 }
 
 .footer .selected {
