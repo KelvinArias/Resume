@@ -17,9 +17,60 @@
   position: relative;
 }
 
-.projectImg {
+.imgContainer {
+  width: 700px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+.projectImage {
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s linear;
+}
+
+.projectImage.previous {
+  transform: translateY(-50%);
+}
+
+.projectImage.next {
+  transform: translateY(50%);
+}
+
+.projectImage.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.pointsContainer {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.403);
+  width: 20px;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  max-width: 700px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.projectPoint {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 1s;
+}
+
+.projectPoint.active {
+  background-color: red;
+  height: 20px;
+  border-radius: 2px;
 }
 
 .projectList {
