@@ -33,14 +33,22 @@ const ShowProject = ({ selectedProjectInfo, onClose }) => {
                 onClick={() => setActiveImage(index)}
               />
             );
+            // previous
+            const thereIsPreviousImage = activeImage - 1 < 0;
+            const previousImage = images.length - 1 === index;
+            const lastImage = activeImage - 1 === index;
+
+            // next
+            const thereIsNextImage = activeImage !== images.length - 1;
+            const nextImage = activeImage + 1;
+            const firstImage = index === 0;
+
             return (
               <img
                 className={cx("projectImage", {
-                  previous:
-                    activeImage - 1 === index ||
-                    (activeImage === 0 && index === images.length),
+                  previous: thereIsPreviousImage ? previousImage : lastImage,
                   active: activeImage === index,
-                  next: activeImage + 1 === index,
+                  next: thereIsNextImage ? nextImage : firstImage,
                 })}
                 key={img.alt}
                 src={img.src}
