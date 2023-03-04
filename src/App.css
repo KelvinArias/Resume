@@ -58,5 +58,6 @@
 }
 
 .footer .selected {
-  color: aqua;
+  color: #00b4d8;
+  font-weight: bold;
 }

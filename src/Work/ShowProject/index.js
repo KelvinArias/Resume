@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import cx from "classnames";
 import "./styles.css";
 
 const ShowProject = ({ selectedProjectInfo, onClose }) => {
   const [activeImage, setActiveImage] = useState(0);
+  const [showInformation, setShowInformation] = useState(false);
   const imagesPoint = [];
   const { companyName, images, date, position, description, skills, logo } =
     selectedProjectInfo;
@@ -19,9 +20,30 @@ const ShowProject = ({ selectedProjectInfo, onClose }) => {
     }, 500);
   };
 
+  const beforeToClose = () => {
+    setShowInformation(false);
+    setTimeout(() => {
+      onClose();
+    }, 500);
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowInformation(true);
+    }, 500);
+  }, [setShowInformation]);
+
   return (
-    <div className="projectModal" onClick={onClose} onWheel={handleScroll}>
-      <div className="projectContent" onClick={(e) => e.stopPropagation()}>
+    <div
+      className="projectModal"
+      onClick={beforeToClose}
+      onWheel={handleScroll}
+    >
+      <div
+        className={cx("projectContent", { showInformation })}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="mask" />
         <div className="imgContainer">
           {images.map((img, index) => {
             imagesPoint.push(
@@ -30,25 +52,26 @@ const ShowProject = ({ selectedProjectInfo, onClose }) => {
                 className={cx("projectPoint", {
                   active: activeImage === index,
                 })}
-                onClick={() => setActiveImage(index)}
               />
             );
             // previous
-            const thereIsPreviousImage = activeImage - 1 < 0;
-            const previousImage = images.length - 1 === index;
-            const lastImage = activeImage - 1 === index;
+            const IsTherePreviousImage = activeImage - 1 < 0;
+            const IsPreviousImage = images.length - 1 === index;
+            const IsLastImage = activeImage - 1 === index;
 
             // next
-            const thereIsNextImage = activeImage !== images.length - 1;
-            const nextImage = activeImage + 1;
-            const firstImage = index === 0;
+            const IsThereIsNextImage = images[activeImage + 1];
+            const IsNextImage = activeImage + 1 === index;
+            const IsFirstImage = index === 0;
 
             return (
               <img
                 className={cx("projectImage", {
-                  previous: thereIsPreviousImage ? previousImage : lastImage,
+                  previous: IsTherePreviousImage
+                    ? IsPreviousImage
+                    : IsLastImage,
                   active: activeImage === index,
-                  next: thereIsNextImage ? nextImage : firstImage,
+                  next: IsThereIsNextImage ? IsNextImage : IsFirstImage,
                 })}
                 key={img.alt}
                 src={img.src}
