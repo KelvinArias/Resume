@@ -26,15 +26,15 @@
 }
 
 .contact {
-  transform: translateX(100vw);
-}
-
-.home {
   transform: translateX(0);
 }
 
-.work {
+.home {
   transform: translateX(-100vw);
+}
+
+.work {
+  transform: translateX(-200vw);
 }
 
 .footer {

@@ -83,18 +83,12 @@ const Home = ({ navigation, setNavigation }) => {
           preserveAspectRatio="xMidYMid meet"
         >
           <g>
-            <path d="M312,13 C360,90 380,300 348,450">
-              {/*<animate
-                attributeName="d"
-                values="M312,13 C360,90 380,300 348,450; M312,13 C312,20 330,50 350,60"
-                dur="1s"
-                repeatCount="1"
-      />*/}
-            </path>
+            <path
+              d="M312,13 C360,90 380,300 348,450"
+              style={{ strokeDashoffset: navigation !== "home" ? 1000 : 0 }}
+            ></path>
           </g>
         </svg>
-        <div className="mask top" />
-        <div className="mask bottom" />
         <img src={image} alt="perfil" />
         <div className="information">
           <h1 className="hello">Hello.</h1>

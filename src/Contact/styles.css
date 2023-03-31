@@ -1,0 +1,94 @@
+.contactContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  z-index: 2;
+}
+
+.contactInfo {
+  display: flex;
+  width: 500px;
+  justify-content: space-around;
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contactInfo .phone,
+.contactInfo .email {
+  width: 50%;
+}
+
+.contactInfo p {
+  margin: 0;
+  padding: 0;
+}
+
+.contactInfo::after {
+  content: "";
+  width: 2px;
+  background-color: #fff;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.form {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form label {
+  width: 250px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: none;
+}
+
+.form label span {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.form input {
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  width: calc(100% - 10px);
+  cursor: none;
+}
+
+.form .message {
+  width: 100%;
+}
+
+.form textarea {
+  min-height: 80px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  width: calc(100% - 10px);
+  cursor: none;
+}
+
+.form .submit {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 40px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 20px;
+  cursor: none;
+}

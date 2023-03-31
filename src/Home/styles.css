@@ -91,6 +91,12 @@
   fill: none;
 }
 
+.curve path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 2s ease-in-out;
+}
+
 .information {
   position: absolute;
   left: -300px;

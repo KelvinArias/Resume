@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Contact from "./Contact";
 import Home from "./Home";
 import Work from "./Work";
 import "./App.css";
@@ -22,6 +23,7 @@ function App() {
   return (
     <div className="app">
       <div className={cx("content", navigation)}>
+        <Contact navigation={navigation} />
         <Home navigation={navigation} setNavigation={setNavigation} />
         <Work navigation={navigation} />
       </div>
