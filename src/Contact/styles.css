@@ -91,4 +91,20 @@
   margin: auto;
   margin-top: 20px;
   cursor: none;
+  transition: all 0.3s;
+}
+
+.form .submit:hover {
+  padding: 10px 20px;
+  border-color: #00b4d8;
+}
+
+.loader {
+  margin: 0 auto;
+  padding-top: 17px;
+}
+
+.loader svg path,
+.loader svg rect {
+  fill: #00b4d8;
 }
