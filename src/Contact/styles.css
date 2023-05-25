@@ -108,3 +108,27 @@
 .loader svg rect {
   fill: #00b4d8;
 }
+
+.thanksContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+}
+
+.thanksContainer p {
+  display: block;
+  margin-bottom: 0;
+}
+
+.thanksContainer .circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.thanks {
+  text-align: center;
+}

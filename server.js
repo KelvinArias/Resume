@@ -42,7 +42,7 @@ app.post("/contact", async (req, res) => {
 
   try {
     // Send email
-    await transporter.sendMail(mailOptions);
+    //await transporter.sendMail(mailOptions);
     console.log("Form data sent via email");
     res.status(200).json({ message: "Form data submitted successfully" });
   } catch (error) {
