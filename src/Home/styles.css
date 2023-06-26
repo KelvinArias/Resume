@@ -125,9 +125,9 @@
 
 .abilities {
   position: absolute;
-  right: -330px;
+  right: -335px;
   color: white;
-  top: 35px;
+  top: 50px;
   list-style: none;
   margin: 20px 0 0;
 }
@@ -241,4 +241,47 @@
 .isNotHome .abilities li:nth-child(1n + 2) {
   margin-left: 0px;
   margin-top: -30px;
+}
+
+@media screen and (max-width: 1275px) {
+  .moon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .center::after {
+    width: calc(100% + 150px);
+    height: calc(100% + 150px);
+  }
+  .curve {
+    right: -125px;
+  }
+  .abilities {
+    right: -255px;
+  }
+  .information {
+    left: -210px;
+  }
+  .play {
+    bottom: -50px;
+    right: -75px;
+  }
+}
+
+@media screen and (max-width: 795px) {
+  .center::after {
+    width: 100%;
+    height: 100%;
+  }
+  .curve,
+  .abilities,
+  .information,
+  .play .tooltip {
+    display: none;
+  }
+  .play {
+    bottom: -50px;
+    right: 25px;
+  }
 }

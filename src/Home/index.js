@@ -97,7 +97,6 @@ const Home = ({ navigation, setNavigation }) => {
           </p>
         </div>
         <ul className="abilities">
-          <li>I am a</li>
           <li>Full stack developer</li>
           <li>M.E.R.N Expert</li>
           <li>Javascript Tester</li>

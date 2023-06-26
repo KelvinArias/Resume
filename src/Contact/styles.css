@@ -11,7 +11,8 @@
 
 .contactInfo {
   display: flex;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   justify-content: space-around;
   position: relative;
   margin-bottom: 20px;
@@ -21,6 +22,11 @@
 .contactInfo .phone,
 .contactInfo .email {
   width: 50%;
+}
+
+.contactInfo svg {
+  width: 48px;
+  height: 48px;
 }
 
 .contactInfo p {
@@ -131,4 +137,41 @@
 
 .thanks {
   text-align: center;
+}
+
+.phoneMessage,
+.emailMessage {
+  display: none;
+}
+
+@media screen and (max-width: 495px) {
+  .subject,
+  .lastName {
+    display: none;
+  }
+  .form label {
+    width: 300px;
+  }
+  .form,
+  .form .message {
+    width: 300px;
+  }
+  .contactInfo svg {
+    width: 30px;
+    height: 30px;
+  }
+  .contactInfo .data {
+    display: none;
+  }
+  .contactInfo .email,
+  .contactInfo .phone {
+    position: relative;
+  }
+  .phoneMessage,
+  .emailMessage {
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
 }
