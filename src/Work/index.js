@@ -25,7 +25,7 @@ const Work = ({ navigation }) => {
         <div className="leftContainer">
           <div className="titleContainer">
             <h2>Work</h2>
-            <p>Profesional and personal projects</p>
+            <p>Professional experience over the years.</p>
           </div>
         </div>
         <div className="projects">

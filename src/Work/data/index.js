@@ -97,16 +97,6 @@ const projectsInfo = [
     skills: "PHP, Laraven, Javascript, HTML, Css, Sass",
     logo: { src: equipcoLogo, alt: "Intelix synergy logo" },
   },
-  {
-    id: "curriculum",
-    portrait: { src: homeIntelix, alt: "curriculum home page" },
-    images: [
-      { src: equipcoLogo, alt: "curriculum home page" },
-      { src: "", alt: "" },
-    ],
-    companyName: "Curriculum",
-    skills: "React, Javascript, MongoDb, Node, Html, Css",
-  },
 ];
 
 export default projectsInfo;

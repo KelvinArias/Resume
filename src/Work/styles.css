@@ -49,9 +49,9 @@
 
 .projects {
   display: grid;
-  gap: 2.5px;
+  gap: 7.5px;
   width: 645px;
-  max-height: 760.5px;
+  max-height: 515px;
   height: 100%;
   grid-template-columns: auto auto;
   overflow-y: auto;
@@ -97,4 +97,25 @@
   transform: translateX(-50%);
 }
 
-/* modal */
+@media screen and (max-width: 795px) {
+  .titleContainer,
+  .leftContainer {
+    display: none;
+  }
+  .projectItem {
+    height: 175px;
+  }
+  .projects {
+    max-height: 361px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .projects {
+    max-height: 420px;
+    grid-template-columns: auto;
+    width: 315px;
+    overflow: hidden;
+    gap: 15.5px;
+  }
+}
