@@ -15,6 +15,7 @@ const Project = ({ alt, image, onClick }) => {
 
 const Work = ({ navigation }) => {
   const [selectedProject, setSelectedProject] = useState("");
+  const [arrowPosition, setArrowPosition] = useState("down");
   const selectedProjectInfo = projectsInfo.find(
     (project) => project.id === selectedProject
   );
@@ -28,7 +29,7 @@ const Work = ({ navigation }) => {
             <p>Professional experience over the years.</p>
           </div>
         </div>
-        <div className="projects">
+        <div className={cx("projects", { projectsUp: arrowPosition === "up" })}>
           {projectsInfo.map((info) => (
             <Project
               key={info.id}
@@ -37,6 +38,27 @@ const Work = ({ navigation }) => {
               onClick={() => setSelectedProject(info.id)}
             />
           ))}
+          <div
+            className={cx("arrow", {
+              down: arrowPosition === "down",
+              up: arrowPosition === "up",
+            })}
+            onClick={() =>
+              setArrowPosition(arrowPosition === "down" ? "up" : "down")
+            }
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="48"
+              viewBox="0 -960 960 960"
+              width="48"
+            >
+              <path
+                fill="white"
+                d="M480-345 240-585l43-43 197 198 197-197 43 43-240 239Z"
+              />
+            </svg>
+          </div>
         </div>
         {selectedProjectInfo && (
           <ShowProject
