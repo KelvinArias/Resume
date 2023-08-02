@@ -204,7 +204,7 @@ const ContactForm = () => {
         <div className="thanksContainer">
           <div className="thanks">
             <p>Thank You!</p>
-            <p className="thanksMessage">Your submission has been received.</p>
+            <p className="thanksMessage">Your message has been sent.</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="48"

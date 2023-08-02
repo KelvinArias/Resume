@@ -101,8 +101,8 @@
 }
 
 .form .submit:hover {
-  padding: 10px 20px;
   border-color: #00b4d8;
+  color: #00b4d8;
 }
 
 .loader {
