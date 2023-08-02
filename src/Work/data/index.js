@@ -13,9 +13,6 @@ import equipcoRequest from "../../images/equipco/equipcoRequest.png";
 // Cemc
 import cecmHome from "../../images/cecm/home.jpg";
 import cecmcontact from "../../images/cecm/contact.jpg";
-import cecmnews from "../../images/cecm/news.png";
-import cecmResources from "../../images/cecm/resources.jpg";
-import cecmTecno from "../../images/cecm/tecno.png";
 import cecmTestimonials from "../../images/cecm/testimonials.jpg";
 import cecmTransac from "../../images/cecm/transac.jpg";
 // goCurrency
@@ -30,7 +27,7 @@ const projectsInfo = [
     images: [
       { src: equipcoHome, alt: "equipco website home page" },
       { src: equipcoLogin, alt: "equipco login aplicantion" },
-      { src: equipcoMain, alt: "equipco aplicantion" },
+      { src: equipcoMain, alt: "equipco aplication" },
       { src: equipcoRequest, alt: "equipco request aplicantion" },
       { src: equipco, alt: "equipco website" },
       { src: equipcoLetsTalk, alt: "equipco lets talk website" },
@@ -64,9 +61,6 @@ const projectsInfo = [
     images: [
       { src: cecmHome, alt: "cecm home" },
       { src: cecmcontact, alt: "cecm contract" },
-      { src: cecmnews, alt: "cecm news" },
-      { src: cecmResources, alt: "cecm resources" },
-      { src: cecmTecno, alt: "cecm tecno" },
       { src: cecmTestimonials, alt: "cecm testimonials" },
       { src: cecmTransac, alt: "cecm transac" },
       { src: goCurrencyHome, alt: "gocurrency home website" },

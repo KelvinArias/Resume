@@ -28,9 +28,7 @@ const ShowProject = ({ selectedProjectInfo, onClose }) => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowInformation(true);
-    }, 500);
+    setShowInformation(true);
   }, [setShowInformation]);
 
   return (
@@ -40,7 +38,10 @@ const ShowProject = ({ selectedProjectInfo, onClose }) => {
       onWheel={handleScroll}
     >
       <div
-        className={cx("projectContent", { showInformation })}
+        className={cx("projectContent", {
+          showInformation,
+          hideInformation: !showInformation,
+        })}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mask" />
@@ -52,6 +53,7 @@ const ShowProject = ({ selectedProjectInfo, onClose }) => {
                 className={cx("projectPoint", {
                   active: activeImage === index,
                 })}
+                onClick={() => setActiveImage(index)}
               />
             );
             // previous

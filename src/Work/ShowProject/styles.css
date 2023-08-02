@@ -15,22 +15,7 @@
 .projectContent {
   background-color: #000000;
   position: relative;
-  animation: slidein 0.5s linear;
   overflow: hidden;
-}
-
-@keyframes slidein {
-  from {
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
-  }
-
-  to {
-    width: 700px;
-    height: 700px;
-    border-radius: 0;
-  }
 }
 
 .mask {
@@ -107,7 +92,7 @@
 
 .projectList {
   list-style: none;
-  margin-left: 10px;
+  margin: 0 10px;
   margin-block-start: auto;
   padding: 0;
   max-width: 350px;
@@ -181,4 +166,62 @@
 .borderRightBottom {
   left: initial;
   right: 2px;
+}
+
+@media screen and (min-width: 975px) {
+  .showInformation {
+    animation: slidein 0.5s linear;
+  }
+
+  .hideInformation {
+    animation: slideout 0.5s linear;
+  }
+
+  @keyframes slidein {
+    from {
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+    }
+
+    to {
+      width: 700px;
+      height: 700px;
+      border-radius: 0;
+    }
+  }
+
+  @keyframes slideout {
+    from {
+      width: 700px;
+      height: 700px;
+      border-radius: 0;
+    }
+
+    to {
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .projectInformation {
+    flex-wrap: wrap;
+  }
+
+  .projectListImgContainer {
+    display: none;
+  }
+
+  .imgContainer {
+    width: 350px;
+    margin: auto;
+    height: 175px;
+  }
+
+  .imgContainer img {
+    max-width: 350px;
+  }
 }
