@@ -9,6 +9,19 @@
   position: relative;
 }
 
+body,
+button,
+input,
+select {
+  font-family: "PT Sans", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Raleway", sans-serif;
+}
+
 .cursor {
   position: absolute;
   left: 0;
