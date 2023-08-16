@@ -206,7 +206,11 @@
   z-index: 2;
   border-radius: 100%;
   transition: 0.5s;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--joy-palette-background-backdrop);
+  -webkit-tap-highlight-color: transparent;
+  opacity: 1;
+  backdrop-filter: blur(8px);
+  transition: opacity 400ms ease 0s, backdrop-filter 400ms ease 0s;
   width: 0;
   height: 0;
   display: flex;

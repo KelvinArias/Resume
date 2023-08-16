@@ -45,9 +45,7 @@ const Home = ({ navigation, setNavigation }) => {
 
   useEffect(() => {
     if (showVideo.showContainer && !showVideo.showPlayer) {
-      setTimeout(() => {
-        setShowVideo({ ...showVideo, showPlayer: true });
-      }, 600);
+      setShowVideo({ ...showVideo, showPlayer: true });
     }
   }, [showVideo]);
 

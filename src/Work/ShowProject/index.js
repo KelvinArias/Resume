@@ -5,7 +5,6 @@ import "./styles.css";
 
 const ShowProject = ({ selectedProjectInfo, onClose }) => {
   const [activeImage, setActiveImage] = useState(0);
-  const [showInformation, setShowInformation] = useState(false);
   const imagesPoint = [];
   const { companyName, images, date, position, description, skills, logo } =
     selectedProjectInfo;
@@ -20,31 +19,9 @@ const ShowProject = ({ selectedProjectInfo, onClose }) => {
     }, 500);
   };
 
-  const beforeToClose = () => {
-    setShowInformation(false);
-    setTimeout(() => {
-      onClose();
-    }, 500);
-  };
-
-  useEffect(() => {
-    setShowInformation(true);
-  }, [setShowInformation]);
-
   return (
-    <div
-      className="projectModal"
-      onClick={beforeToClose}
-      onWheel={handleScroll}
-    >
-      <div
-        className={cx("projectContent", {
-          showInformation,
-          hideInformation: !showInformation,
-        })}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="mask" />
+    <div className="projectModal" onClick={onClose} onWheel={handleScroll}>
+      <div className={"projectContent"} onClick={(e) => e.stopPropagation()}>
         <div className="imgContainer">
           {images.map((img, index) => {
             imagesPoint.push(
