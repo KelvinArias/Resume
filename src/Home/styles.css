@@ -28,7 +28,23 @@
   width: calc(100% + 300px);
   height: calc(100% + 300px);
   border-radius: 50%;
-  border: 1px solid #7f7f7f;
+  box-shadow: 2px 2px 15px 5px rgba(127, 127, 127, 0.7);
+  animation: orbit 10s linear infinite;
+}
+
+@keyframes orbit {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
 }
 
 .center img {
