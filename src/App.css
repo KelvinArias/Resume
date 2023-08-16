@@ -64,9 +64,10 @@ h3 {
 
 .footer .btn {
   color: #ffffff;
-  margin-left: 5px;
+  margin-left: 30px;
+  margin-bottom: 20px;
   background-color: transparent;
-  font-size: 16px;
+  font-size: 18px;
   cursor: none;
   border: none;
 }

@@ -144,6 +144,14 @@
   display: none;
 }
 
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.thanksMessage {
+  margin: 0;
+}
+
 @media screen and (max-width: 495px) {
   .subject,
   .lastName {

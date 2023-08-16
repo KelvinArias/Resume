@@ -1,4 +1,5 @@
-.projectModal {
+.projectModal,
+.mask {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -9,11 +10,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mask {
   background-color: var(--joy-palette-background-backdrop);
   -webkit-tap-highlight-color: transparent;
   opacity: 1;
   backdrop-filter: blur(8px);
   transition: opacity 400ms ease 0s, backdrop-filter 400ms ease 0s;
+  z-index: 1;
 }
 
 .projectContent {
@@ -21,6 +26,7 @@
   position: relative;
   overflow: hidden;
   transition: 3s;
+  z-index: 2;
 }
 
 .imgContainer {

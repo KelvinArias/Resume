@@ -203,7 +203,7 @@ const ContactForm = () => {
       {submitState === success && (
         <div className="thanksContainer">
           <div className="thanks">
-            <p>Thank You!</p>
+            <h2 className="mb-10">Thank You!</h2>
             <p className="thanksMessage">Your message has been sent.</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"

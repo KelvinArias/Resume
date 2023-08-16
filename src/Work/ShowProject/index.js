@@ -21,6 +21,7 @@ const ShowProject = ({ selectedProjectInfo, onClose }) => {
 
   return (
     <div className="projectModal" onClick={onClose} onWheel={handleScroll}>
+      <div className="mask" />
       <div className={"projectContent"} onClick={(e) => e.stopPropagation()}>
         <div className="imgContainer">
           {images.map((img, index) => {
