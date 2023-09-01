@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { OrbitControls, useTexture } from "@react-three/drei";
 import { LUTPass } from "three-stdlib";
@@ -37,18 +37,7 @@ function Sphere({ direction }) {
   );
 }
 
-const Home = ({ navigation, setNavigation }) => {
-  const [showVideo, setShowVideo] = useState({
-    showContainer: false,
-    showPlayer: false,
-  });
-
-  useEffect(() => {
-    if (showVideo.showContainer && !showVideo.showPlayer) {
-      setShowVideo({ ...showVideo, showPlayer: true });
-    }
-  }, [showVideo]);
-
+const Home = ({ navigation, setNavigation, setModal, showModal }) => {
   return (
     <div className={cx("homeContainer", { isNotHome: navigation !== "home" })}>
       <div
@@ -100,10 +89,7 @@ const Home = ({ navigation, setNavigation }) => {
           <li>Javascript Tester</li>
           <li>Passionate programmer</li>
         </ul>
-        <div
-          className="play"
-          onClick={() => setShowVideo({ ...showVideo, showContainer: true })}
-        >
+        <div className="play" onClick={() => setModal(true)}>
           <svg
             width="50px"
             height="50px"
@@ -115,24 +101,18 @@ const Home = ({ navigation, setNavigation }) => {
           <p className="tooltip">Presentation</p>
         </div>
       </div>
-      <div
-        className={cx("videoContainer", {
-          showVideoContainer: showVideo.showContainer,
-          showPlayer: showVideo.showPlayer,
-        })}
-        onClick={() =>
-          setShowVideo({ showContainer: false, showPlayer: false })
-        }
-      >
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/nhvC5JqO5I8"
-          title="YouTube video player"
-          allow="autoplay; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
+      {showModal && (
+        <div className="videoContainer" onClick={() => setModal(false)}>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/nhvC5JqO5I8"
+            title="YouTube video player"
+            allow="autoplay; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
     </div>
   );
 };
@@ -140,6 +120,8 @@ const Home = ({ navigation, setNavigation }) => {
 Home.propTypes = {
   navigation: PropTypes.string.isRequired,
   setNavigation: PropTypes.func.isRequired,
+  setModal: PropTypes.func.isRequired,
+  showModal: PropTypes.bool.isRequired,
 };
 
 export default Home;

@@ -8,6 +8,7 @@ import cx from "classnames";
 function App() {
   const [navigation, setNavigation] = useState("home");
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [modalIsOpen, setModal] = useState(false);
 
   const mouseMove = (e) =>
     setCursorPosition({ x: e.pageX - 30, y: e.pageY - 30 });
@@ -22,10 +23,15 @@ function App() {
 
   return (
     <div className="app">
-      <div className={cx("content", navigation)}>
+      <div className={cx("content", navigation, { modalIsOpen })}>
         <Contact navigation={navigation} />
-        <Home navigation={navigation} setNavigation={setNavigation} />
-        <Work navigation={navigation} />
+        <Home
+          navigation={navigation}
+          setModal={setModal}
+          showModal={modalIsOpen}
+          setNavigation={setNavigation}
+        />
+        <Work setModal={setModal} navigation={navigation} />
       </div>
       <div className="footer">
         <button

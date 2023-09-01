@@ -13,7 +13,7 @@ const Project = ({ alt, image, onClick }) => {
   );
 };
 
-const Work = ({ navigation }) => {
+const Work = ({ navigation, setModal }) => {
   const [selectedProject, setSelectedProject] = useState("");
   const [arrowPosition, setArrowPosition] = useState("down");
   const selectedProjectInfo = projectsInfo.find(
@@ -35,7 +35,10 @@ const Work = ({ navigation }) => {
               key={info.id}
               image={info.portrait.src}
               alt={info.portrait.alt}
-              onClick={() => setSelectedProject(info.id)}
+              onClick={() => {
+                setSelectedProject(info.id);
+                setModal(true);
+              }}
             />
           ))}
           <div
@@ -63,7 +66,10 @@ const Work = ({ navigation }) => {
         {selectedProjectInfo && (
           <ShowProject
             selectedProjectInfo={selectedProjectInfo}
-            onClose={() => setSelectedProject("")}
+            onClose={() => {
+              setSelectedProject("");
+              setModal(false);
+            }}
           />
         )}
       </div>
