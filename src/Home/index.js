@@ -87,7 +87,7 @@ const Home = ({ navigation, setNavigation, setModal, showModal }) => {
           <li>Full stack developer</li>
           <li>M.E.R.N Expert</li>
           <li>Javascript Tester</li>
-          <li>Passionate programmer</li>
+          <li>+4 years work experience</li>
         </ul>
         <div className="play" onClick={() => setModal(true)}>
           <svg

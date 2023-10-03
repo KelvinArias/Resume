@@ -1,8 +1,8 @@
 import homeEquipco from "../../images/homeProjects/homeEquipco.png";
 import homeStartDesign from "../../images/homeProjects/homeStartDesign.png";
 import homeIntelix from "../../images/homeProjects/homeIntelix.png";
-import homeEquipco920 from "../../images/equipco/equipcoHome.png";
 import equipcoLogo from "../../images/equipco/equipcoLogoNew.png";
+import intelixLogo from "../../images/intelix/intelixLogo.jpeg";
 // equipco
 import equipco from "../../images/equipco/equipco.png";
 import equipcoLogin from "../../images/equipco/equipcoLogin.png";
@@ -19,6 +19,23 @@ import cecmTransac from "../../images/cecm/transac.jpg";
 import goCurrencyHome from "../../images/goCurrency/goCurrencyHome.jpg";
 import goCurrencyAir from "../../images/goCurrency/goCurrencyAir.jpg";
 import goCurrencyActionTime from "../../images/goCurrency/goCurrencyActionTime.jpg";
+// Intelix
+import IntelixHome from "../../images/intelix/home.jpg";
+import IntelixAbout from "../../images/intelix/about.jpg";
+import IntelixService from "../../images/intelix/services.jpg";
+import IntelixContact from "../../images/intelix/contact.jpg";
+import IntelixIroHome from "../../images/grupoIro/home.jpg";
+import IntelixIroNosotros from "../../images/grupoIro/nosotros.png";
+import IntelixIroTrayectoria from "../../images/grupoIro/trayectoria.jpg";
+// qallpa
+import qallpaLogo from "../../images/qallpa/logo.jpg";
+import qallpaLogin from "../../images/qallpa/login.png";
+import qallpaDashboard from "../../images/qallpa/dashboard.png";
+import qallpaCampaign from "../../images/qallpa/campaign.png";
+import qallpaChat from "../../images/qallpa/chat.png";
+import qallpaNotes from "../../images/qallpa/notes.png";
+import qallpaOpenNote from "../../images/qallpa/openNote.png";
+import qallpaSales from "../../images/qallpa/sales.png";
 
 const projectsInfo = [
   {
@@ -43,17 +60,22 @@ const projectsInfo = [
   },
   {
     id: "qallpa",
-    portrait: { src: homeEquipco, alt: "qallpa home page" },
+    portrait: { src: qallpaLogin, alt: "qallpa login page" },
     images: [
-      { src: homeEquipco920, alt: "qallpa home page site" },
-      { src: "", alt: "" },
+      { src: qallpaLogin, alt: "equipco website home page" },
+      { src: qallpaNotes, alt: "qallpa notes page" },
+      { src: qallpaOpenNote, alt: "qallpa chat page" },
+      { src: qallpaChat, alt: "qallpa chat page" },
+      { src: qallpaDashboard, alt: "qallpa dashboard page" },
+      { src: qallpaSales, alt: "qallpa sales page" },
+      { src: qallpaCampaign, alt: "qallpa campaign page" },
     ],
     companyName: "Qallpa",
     date: "05/2020 - 02/2021",
     position: "Front-end Developer",
     description: "qallpa is a call center company located in Peru",
     skills: "React, Javascript, MongoDb, Node, Redux, Html, Css, MaterialUI",
-    logo: { src: equipcoLogo, alt: "qallpa logo" },
+    logo: { src: qallpaLogo, alt: "qallpa logo" },
   },
   {
     id: "startDesign",
@@ -80,8 +102,13 @@ const projectsInfo = [
     id: "intelix",
     portrait: { src: homeIntelix, alt: "intelix home page" },
     images: [
-      { src: homeEquipco920, alt: "intelix home page" },
-      { src: "", alt: "" },
+      { src: IntelixHome, alt: "intelix home page" },
+      { src: IntelixAbout, alt: "intelix about page" },
+      { src: IntelixService, alt: "intelix service page" },
+      { src: IntelixContact, alt: "intelix contact page" },
+      { src: IntelixIroHome, alt: "Iro home page" },
+      { src: IntelixIroNosotros, alt: "Iro nosotros page" },
+      { src: IntelixIroTrayectoria, alt: "Iro trayectoria page" },
     ],
     companyName: "Intelix Synergy",
     date: "02/2018 - 09/2018",
@@ -89,7 +116,7 @@ const projectsInfo = [
     description:
       "Intelix Synergy is a company dedicated to create web and app solutions for clients around the world",
     skills: "PHP, Laraven, Javascript, HTML, Css, Sass",
-    logo: { src: equipcoLogo, alt: "Intelix synergy logo" },
+    logo: { src: intelixLogo, alt: "Intelix synergy logo" },
   },
 ];
 

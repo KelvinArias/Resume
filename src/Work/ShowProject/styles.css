@@ -40,6 +40,7 @@
   position: absolute;
   opacity: 0;
   transition: 0.5s linear;
+  width: inherit;
 }
 
 .projectImage.previous {
