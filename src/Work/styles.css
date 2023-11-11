@@ -12,6 +12,7 @@
   max-width: 1200px;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 
 .leftContainer {
@@ -54,9 +55,7 @@
   max-height: 420px;
   height: 100%;
   grid-template-columns: auto auto;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  position: relative;
+  overflow: hidden;
 }
 
 /* width */
@@ -79,26 +78,6 @@
   background: #555;
 }
 
-.projectItem {
-  display: grid;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  font-size: 30px;
-  height: 200px;
-  text-align: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  transition: 1s;
-}
-
-.projectItem img {
-  width: auto;
-  height: 100%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .arrow {
   display: none;
 }
@@ -108,9 +87,7 @@
   .leftContainer {
     display: none;
   }
-  .projectItem {
-    height: 175px;
-  }
+
   .projects {
     max-height: 362px;
   }

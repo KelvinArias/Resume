@@ -3,17 +3,11 @@ import PropTypes from "prop-types";
 import "./styles.css";
 import cx from "classnames";
 import ShowProject from "./ShowProject";
+import ExpandableCard from "./ShowProject/Expandable";
 import projectsInfo from "./data";
+import Project from "./Project";
 
-const Project = ({ alt, image, onClick }) => {
-  return (
-    <div className="projectItem" onClick={onClick}>
-      <img src={image} alt={alt} />
-    </div>
-  );
-};
-
-const Work = ({ navigation, setModal }) => {
+const Work = ({ navigation, setModal, showModal }) => {
   const [selectedProject, setSelectedProject] = useState("");
   const [arrowPosition, setArrowPosition] = useState("down");
   const selectedProjectInfo = projectsInfo.find(
@@ -29,7 +23,23 @@ const Work = ({ navigation, setModal }) => {
             <p>Professional experience over the years.</p>
           </div>
         </div>
+        {showModal && <div className="mask" />}
         <div className={cx("projects", { projectsUp: arrowPosition === "up" })}>
+          {projectsInfo.map((info) => (
+            <ExpandableCard
+              key={info.id}
+              image={info.portrait.src}
+              alt={info.portrait.alt}
+              onClick={() => {
+                setSelectedProject(info.id);
+                setModal(!showModal);
+              }}
+              selectedProjectInfo={selectedProjectInfo}
+            />
+          ))}
+        </div>
+
+        {/*<div className={cx("projects", { projectsUp: arrowPosition === "up" })}>
           {projectsInfo.map((info) => (
             <Project
               key={info.id}
@@ -71,7 +81,7 @@ const Work = ({ navigation, setModal }) => {
               setModal(false);
             }}
           />
-        )}
+        )}*/}
       </div>
     </div>
   );

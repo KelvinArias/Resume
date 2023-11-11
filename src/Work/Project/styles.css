@@ -1,0 +1,32 @@
+/*.projectItem {
+  display: grid;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  font-size: 30px;
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  transition: 1s;
+}
+
+.projectItem img {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 795px) {
+  .projectItem {
+    height: 175px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .projectsUp .projectItem {
+    transform: translateY(-334px);
+  }
+}
+*/

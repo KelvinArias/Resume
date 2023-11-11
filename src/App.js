@@ -31,7 +31,11 @@ function App() {
           showModal={modalIsOpen}
           setNavigation={setNavigation}
         />
-        <Work setModal={setModal} navigation={navigation} />
+        <Work
+          showModal={modalIsOpen}
+          setModal={setModal}
+          navigation={navigation}
+        />
       </div>
       <div className="footer">
         <button
