@@ -3,6 +3,7 @@ import homeStartDesign from "../../images/homeProjects/homeStartDesign.png";
 import homeIntelix from "../../images/homeProjects/homeIntelix.png";
 import equipcoLogo from "../../images/equipco/equipcoLogoNew.png";
 import intelixLogo from "../../images/intelix/intelixLogo.jpeg";
+import startLogo from "../../images/startDesign/logo.jpeg";
 // equipco
 import equipco from "../../images/equipco/equipco.png";
 import equipcoLogin from "../../images/equipco/equipcoLogin.png";
@@ -96,7 +97,7 @@ const projectsInfo = [
       "Start design group is a boutique creative agency with offices in Los Angeles, Miami, and Lima; and clients all over the world",
     skills:
       "PHP, Wordpress, HTML, CSS, JavaScript, Bootstrap, Photoshop, WCK plugin, Sass",
-    logo: { src: equipcoLogo, alt: "start design logo" },
+    logo: { src: startLogo, alt: "start design logo" },
   },
   {
     id: "intelix",

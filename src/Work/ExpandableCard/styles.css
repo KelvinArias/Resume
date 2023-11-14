@@ -1,70 +1,37 @@
-.projectModal,
-.mask {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mask {
-  background-color: var(--joy-palette-background-backdrop);
-  -webkit-tap-highlight-color: transparent;
-  opacity: 1;
-  backdrop-filter: blur(8px);
-  transition: opacity 400ms ease 0s, backdrop-filter 400ms ease 0s;
-}
-
 .projectContent {
   background-color: #000000;
   position: relative;
   overflow: hidden;
-}
-
-.imgContainer {
-  width: 700px;
-  height: 350px;
-  position: relative;
-  overflow: hidden;
-}
-
-.projectImage {
-  position: absolute;
-  opacity: 0;
-  transition: 0.5s linear;
-  width: inherit;
-}
-
-.projectImage.previous {
-  transform: translateY(-50%) scale3d(0.5, 0.5, 0.5);
-}
-
-.projectImage.next {
-  transform: translateY(50%) scale3d(0.5, 0.5, 0.5);
-}
-
-.projectImage.active {
-  transform: translateY(0) scale3d(1, 1, 1);
-  opacity: 1;
+  width: 100%;
 }
 
 .pointsContainer {
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
   width: 20px;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
+  top: 175px;
+  height: 140px;
+  right: 25px;
+  transform: translateY(-50%) !important;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   border-radius: 10px;
   overflow: hidden;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .projectPoint {
@@ -81,6 +48,40 @@
   background-color: #00b4d8;
   height: 20px;
   border-radius: 2px;
+  animation-name: in-and-stay; /* name of the animation */
+  animation-duration: 1s; /* duration of the animation */
+  animation-delay: 0s; /* delay of the animation */
+  animation-fill-mode: forwards;
+}
+
+/* define the animation keyframes */
+@keyframes in-and-stay {
+  from {
+    height: 20px;
+    border-radius: 2px;
+  }
+  to {
+    height: 10px;
+    border-radius: 50%;
+  }
+}
+
+.activeImageHadChaged {
+  animation-name: out-and-back; /* name of the animation */
+  animation-duration: 0.5s; /* duration of the animation */
+  animation-delay: 0s; /* delay of the animation */
+  animation-fill-mode: forwards;
+}
+
+@keyframes out-and-back {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .projectList {
@@ -190,10 +191,12 @@
 
 .isCardExpanded {
   position: absolute !important;
-  width: 600px !important;
+  max-width: 600px !important;
+  width: 100% !important;
   height: 86vh !important;
   max-height: 630px !important;
-  padding: 1rem;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .isCardCollapsed {
@@ -222,4 +225,15 @@
 
 .react-magic-motion-placeholder-box {
   display: none !important;
+}
+
+.react-magic-motion-background-fade {
+  position: absolute !important;
+}
+
+@media screen and (max-width: 375px) {
+  .isImageExpanded {
+    min-width: 450px;
+    margin-left: -73px;
+  }
 }

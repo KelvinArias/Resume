@@ -1,19 +1,9 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
 import "./styles.css";
 import cx from "classnames";
-import ShowProject from "./ShowProject";
-import ExpandableCard from "./ShowProject/Expandable";
-import projectsInfo from "./data";
-import Project from "./Project";
+import Projects from "./Projects";
 
 const Work = ({ navigation, setModal, showModal }) => {
-  const [selectedProject, setSelectedProject] = useState("");
-  const [arrowPosition, setArrowPosition] = useState("down");
-  const selectedProjectInfo = projectsInfo.find(
-    (project) => project.id === selectedProject
-  );
-
   return (
     <div className={cx("workContainer", { isNotWork: navigation !== "work" })}>
       <div className="workContent">
@@ -23,65 +13,7 @@ const Work = ({ navigation, setModal, showModal }) => {
             <p>Professional experience over the years.</p>
           </div>
         </div>
-        {showModal && <div className="mask" />}
-        <div className={cx("projects", { projectsUp: arrowPosition === "up" })}>
-          {projectsInfo.map((info) => (
-            <ExpandableCard
-              key={info.id}
-              image={info.portrait.src}
-              alt={info.portrait.alt}
-              onClick={() => {
-                setSelectedProject(info.id);
-                setModal(!showModal);
-              }}
-              selectedProjectInfo={selectedProjectInfo}
-            />
-          ))}
-        </div>
-
-        {/*<div className={cx("projects", { projectsUp: arrowPosition === "up" })}>
-          {projectsInfo.map((info) => (
-            <Project
-              key={info.id}
-              image={info.portrait.src}
-              alt={info.portrait.alt}
-              onClick={() => {
-                setSelectedProject(info.id);
-                setModal(true);
-              }}
-            />
-          ))}
-          <div
-            className={cx("arrow", {
-              down: arrowPosition === "down",
-              up: arrowPosition === "up",
-            })}
-            onClick={() =>
-              setArrowPosition(arrowPosition === "down" ? "up" : "down")
-            }
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="48"
-              viewBox="0 -960 960 960"
-              width="48"
-            >
-              <path
-                fill="white"
-                d="M480-345 240-585l43-43 197 198 197-197 43 43-240 239Z"
-              />
-            </svg>
-          </div>
-        </div>
-        {selectedProjectInfo && (
-          <ShowProject
-            selectedProjectInfo={selectedProjectInfo}
-            onClose={() => {
-              setSelectedProject("");
-              setModal(false);
-            }}
-          />
-        )}*/}
+        <Projects setModal={setModal} showModal={showModal} />
       </div>
     </div>
   );

@@ -12,13 +12,30 @@ export default function ExpandableCard({
   onClick,
 }) {
   const [isCardExpanded, setIsCardExpanded] = useState(false);
+  const [activeImage, setActiveImage] = useState(0);
+  const [activeImageHadChaged, setActiveImageHadChaged] = useState(false);
   const { companyName, images, date, position, description, skills, logo } =
     selectedProjectInfo || {};
+
+  const handleScroll = (event) => {
+    const delta = event.deltaY;
+    const numImages = images.length;
+    setActiveImageHadChaged(true);
+    setActiveImage(
+      (activeImage + numImages + (delta > 0 ? 1 : -1)) % numImages
+    );
+    setTimeout(() => {
+      setActiveImageHadChaged(false);
+    }, 500);
+  };
 
   return (
     <MagicCard
       isCardExpanded={isCardExpanded}
-      onBackgroundFadeClick={() => setIsCardExpanded(false)}
+      onBackgroundFadeClick={() => {
+        setIsCardExpanded(false);
+        onClick();
+      }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <div
@@ -26,20 +43,38 @@ export default function ExpandableCard({
           isCardExpanded,
           isCardCollapsed: !isCardExpanded,
         })}
+        onClick={() => {
+          setIsCardExpanded(true);
+          !isCardExpanded && onClick();
+        }}
+        onWheel={(e) => isCardExpanded && handleScroll(e)}
       >
         <div className="contentContainer">
           <img
             className={cx({
               isImageExpanded: isCardExpanded,
               isImageCollapsed: !isCardExpanded,
+              activeImageHadChaged,
             })}
-            alt={alt}
-            src={image}
-            onClick={() => {
-              setIsCardExpanded(!isCardExpanded);
-              onClick();
-            }}
+            alt={isCardExpanded ? images[activeImage].alt : alt}
+            src={isCardExpanded ? images[activeImage].src : image}
           />
+          {isCardExpanded && (
+            <div
+              className="pointsContainer"
+              style={{ height: `${images.length * 20 + 20}px` }}
+            >
+              {images.map((img, index) => (
+                <div
+                  key={index}
+                  className={cx("projectPoint", {
+                    active: activeImage === index,
+                  })}
+                />
+              ))}
+            </div>
+          )}
+
           {isCardExpanded && selectedProjectInfo && (
             <section className="projectContent">
               <h2>{companyName}</h2>
