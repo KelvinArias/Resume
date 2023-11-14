@@ -48,13 +48,12 @@
   background-color: #00b4d8;
   height: 20px;
   border-radius: 2px;
-  animation-name: in-and-stay; /* name of the animation */
-  animation-duration: 1s; /* duration of the animation */
-  animation-delay: 0s; /* delay of the animation */
+  animation-name: in-and-stay;
+  animation-duration: 1s;
+  animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-/* define the animation keyframes */
 @keyframes in-and-stay {
   from {
     height: 20px;
@@ -67,9 +66,9 @@
 }
 
 .activeImageHadChaged {
-  animation-name: out-and-back; /* name of the animation */
-  animation-duration: 0.5s; /* duration of the animation */
-  animation-delay: 0s; /* delay of the animation */
+  animation-name: out-and-back;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
@@ -163,28 +162,6 @@
   right: 2px;
 }
 
-@media screen and (max-width: 650px) {
-  .projectInformation {
-    flex-wrap: wrap;
-  }
-
-  .projectListImgContainer {
-    display: none;
-  }
-
-  .imgContainer {
-    width: 350px;
-    margin: auto;
-    height: 175px;
-  }
-
-  .imgContainer img {
-    max-width: 350px;
-  }
-}
-
-/* ================================================================= */
-
 .projectItem {
   overflow: hidden;
 }
@@ -229,6 +206,26 @@
 
 .react-magic-motion-background-fade {
   position: absolute !important;
+}
+
+@media screen and (max-width: 650px) {
+  .projectInformation {
+    flex-wrap: wrap;
+  }
+
+  .projectListImgContainer {
+    display: none;
+  }
+
+  .imgContainer {
+    width: 350px;
+    margin: auto;
+    height: 175px;
+  }
+
+  .imgContainer img {
+    max-width: 350px;
+  }
 }
 
 @media screen and (max-width: 375px) {

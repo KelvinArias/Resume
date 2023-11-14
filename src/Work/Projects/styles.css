@@ -8,26 +8,6 @@
   overflow: hidden;
 }
 
-/* width */
-.projects::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-.projects::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-.projects::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-.projects::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 .arrow {
   display: none;
 }
@@ -45,6 +25,8 @@
     width: 315px;
     overflow: hidden;
     gap: 15.5px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .positionMobile {

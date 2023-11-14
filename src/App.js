@@ -4,9 +4,11 @@ import Home from "./Home";
 import Work from "./Work";
 import "./App.css";
 import cx from "classnames";
+import CursorIcon from "./icons/cursor";
+import { HOME, CONTACT, WORK } from "./const";
 
 function App() {
-  const [navigation, setNavigation] = useState("home");
+  const [navigation, setNavigation] = useState(HOME);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [modalIsOpen, setModal] = useState(false);
 
@@ -39,45 +41,28 @@ function App() {
       </div>
       <div className="footer">
         <button
-          className={cx("btn", { selected: navigation === "contact" })}
+          className={cx("btn", { selected: navigation === CONTACT })}
           type="button"
-          onClick={() => setNavigation("contact")}
+          onClick={() => setNavigation(CONTACT)}
         >
           Contact
         </button>
         <button
-          className={cx("btn", { selected: navigation === "home" })}
+          className={cx("btn", { selected: navigation === HOME })}
           type="button"
-          onClick={() => setNavigation("home")}
+          onClick={() => setNavigation(HOME)}
         >
           Home
         </button>
         <button
-          className={cx("btn", { selected: navigation === "work" })}
+          className={cx("btn", { selected: navigation === WORK })}
           type="button"
-          onClick={() => setNavigation("work")}
+          onClick={() => setNavigation(WORK)}
         >
           Work
         </button>
       </div>
-      <svg
-        className="cursor"
-        xmlns="http://www.w3.org/2000/svg"
-        width="60"
-        height="60"
-        style={{ left: cursorPosition.x, top: cursorPosition.y }}
-      >
-        <circle cx="30" cy="30" r="10" fill="white" />
-        <circle
-          cx="30"
-          cy="30"
-          r="29"
-          stroke="white"
-          strokeWidth="1"
-          fill="transparent"
-        />
-        Sorry, your browser does not support inline SVG.
-      </svg>
+      <CursorIcon cursorPosition={cursorPosition} />
     </div>
   );
 }

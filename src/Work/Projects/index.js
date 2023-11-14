@@ -4,10 +4,11 @@ import PropTypes from "prop-types";
 import ExpandableCard from "../ExpandableCard";
 import projectsInfo from "../data";
 import cx from "classnames";
+import ArrowIcon from "../../icons/arrow";
 
 const Projects = ({ setModal, showModal }) => {
   const [selectedProject, setSelectedProject] = useState("");
-  const [arrowPosition, setArrowPosition] = useState("down");
+  const [isArrowDown, setArrowPosition] = useState(true);
   const selectedProjectInfo = projectsInfo.find(
     (project) => project.id === selectedProject
   );
@@ -15,7 +16,7 @@ const Projects = ({ setModal, showModal }) => {
   return (
     <div
       className={cx("projects", {
-        projectsUp: arrowPosition === "up" && !showModal,
+        projectsUp: !isArrowDown && !showModal,
         positionMobile: !showModal,
       })}
     >
@@ -33,25 +34,13 @@ const Projects = ({ setModal, showModal }) => {
       ))}
       <div
         className={cx("arrow", {
-          down: arrowPosition === "down",
-          up: arrowPosition === "up",
+          down: isArrowDown,
+          up: !isArrowDown,
           displayNone: showModal,
         })}
-        onClick={() =>
-          setArrowPosition(arrowPosition === "down" ? "up" : "down")
-        }
+        onClick={() => setArrowPosition(!isArrowDown)}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="48"
-          viewBox="0 -960 960 960"
-          width="48"
-        >
-          <path
-            fill="white"
-            d="M480-345 240-585l43-43 197 198 197-197 43 43-240 239Z"
-          />
-        </svg>
+        <ArrowIcon />
       </div>
     </div>
   );

@@ -2,10 +2,11 @@ import PropTypes from "prop-types";
 import "./styles.css";
 import cx from "classnames";
 import Projects from "./Projects";
+import { WORK } from "../const";
 
 const Work = ({ navigation, setModal, showModal }) => {
   return (
-    <div className={cx("workContainer", { isNotWork: navigation !== "work" })}>
+    <div className={cx("workContainer", { isNotWork: navigation !== WORK })}>
       <div className="workContent">
         <div className="leftContainer">
           <div className="titleContainer">

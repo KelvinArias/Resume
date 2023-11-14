@@ -2,11 +2,13 @@ import { useRef } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { OrbitControls, useTexture } from "@react-three/drei";
 import { LUTPass } from "three-stdlib";
-import image from "../image.png";
-import moon from "../moon.jpg";
+import image from "../images/image.png";
+import moon from "../images/moon.jpg";
 import PropTypes from "prop-types";
 import "./styles.css";
 import cx from "classnames";
+import { HOME, CONTACT, WORK } from "../const";
+import CurveIcon from "../icons/curve";
 extend({ LUTPass });
 
 function Moon({ direction }) {
@@ -39,12 +41,10 @@ function Sphere({ direction }) {
 
 const Home = ({ navigation, setNavigation, setModal, showModal }) => {
   return (
-    <div className={cx("homeContainer", { isNotHome: navigation !== "home" })}>
+    <div className={cx("homeContainer", { isNotHome: navigation !== HOME })}>
       <div
         onClick={() =>
-          navigation === "contact"
-            ? setNavigation("home")
-            : setNavigation("contact")
+          navigation === CONTACT ? setNavigation(HOME) : setNavigation(CONTACT)
         }
         className="moon left"
       >
@@ -53,7 +53,7 @@ const Home = ({ navigation, setNavigation, setModal, showModal }) => {
       </div>
       <div
         onClick={() =>
-          navigation === "work" ? setNavigation("home") : setNavigation("work")
+          navigation === WORK ? setNavigation(HOME) : setNavigation(WORK)
         }
         className="moon right"
       >
@@ -61,21 +61,7 @@ const Home = ({ navigation, setNavigation, setModal, showModal }) => {
         <Moon direction={0.001} />
       </div>
       <div className="center">
-        <svg
-          className="curve"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 499 499"
-          width="200"
-          height="200"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <g>
-            <path
-              d="M312,13 C360,90 380,300 348,450"
-              style={{ strokeDashoffset: navigation !== "home" ? 1000 : 0 }}
-            ></path>
-          </g>
-        </svg>
+        <CurveIcon />
         <img src={image} alt="perfil" />
         <div className="information">
           <h1 className="hello">Hello.</h1>

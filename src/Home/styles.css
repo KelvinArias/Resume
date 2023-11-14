@@ -237,8 +237,6 @@
   align-items: center;
 }
 
-/* IsNotHome */
-
 .isNotHome .hello::after {
   width: 0;
 }
