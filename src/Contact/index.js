@@ -70,7 +70,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contactContainer">
+    <article className="contactContainer">
       {!submitState && (
         <Fragment>
           <div className="contactInfo">
@@ -162,7 +162,7 @@ const ContactForm = () => {
           </div>
         </div>
       )}
-    </div>
+    </article>
   );
 };
 

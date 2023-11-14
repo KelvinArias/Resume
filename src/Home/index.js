@@ -41,7 +41,9 @@ function Sphere({ direction }) {
 
 const Home = ({ navigation, setNavigation, setModal, showModal }) => {
   return (
-    <div className={cx("homeContainer", { isNotHome: navigation !== HOME })}>
+    <article
+      className={cx("homeContainer", { isNotHome: navigation !== HOME })}
+    >
       <div
         onClick={() =>
           navigation === CONTACT ? setNavigation(HOME) : setNavigation(CONTACT)
@@ -99,7 +101,7 @@ const Home = ({ navigation, setNavigation, setModal, showModal }) => {
           ></iframe>
         </div>
       )}
-    </div>
+    </article>
   );
 };
 

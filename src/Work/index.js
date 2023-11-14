@@ -6,7 +6,9 @@ import { WORK } from "../const";
 
 const Work = ({ navigation, setModal, showModal }) => {
   return (
-    <div className={cx("workContainer", { isNotWork: navigation !== WORK })}>
+    <article
+      className={cx("workContainer", { isNotWork: navigation !== WORK })}
+    >
       <div className="workContent">
         <div className="leftContainer">
           <div className="titleContainer">
@@ -16,7 +18,7 @@ const Work = ({ navigation, setModal, showModal }) => {
         </div>
         <Projects setModal={setModal} showModal={showModal} />
       </div>
-    </div>
+    </article>
   );
 };
 

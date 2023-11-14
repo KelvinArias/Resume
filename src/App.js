@@ -5,7 +5,8 @@ import Work from "./Work";
 import "./App.css";
 import cx from "classnames";
 import CursorIcon from "./icons/cursor";
-import { HOME, CONTACT, WORK } from "./const";
+import Footer from "./Footer";
+import { HOME } from "./const";
 
 function App() {
   const [navigation, setNavigation] = useState(HOME);
@@ -24,8 +25,8 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <div className={cx("content", navigation, { modalIsOpen })}>
+    <main className="app">
+      <section className={cx("content", navigation, { modalIsOpen })}>
         <Contact navigation={navigation} />
         <Home
           navigation={navigation}
@@ -38,32 +39,10 @@ function App() {
           setModal={setModal}
           navigation={navigation}
         />
-      </div>
-      <div className="footer">
-        <button
-          className={cx("btn", { selected: navigation === CONTACT })}
-          type="button"
-          onClick={() => setNavigation(CONTACT)}
-        >
-          Contact
-        </button>
-        <button
-          className={cx("btn", { selected: navigation === HOME })}
-          type="button"
-          onClick={() => setNavigation(HOME)}
-        >
-          Home
-        </button>
-        <button
-          className={cx("btn", { selected: navigation === WORK })}
-          type="button"
-          onClick={() => setNavigation(WORK)}
-        >
-          Work
-        </button>
-      </div>
+      </section>
+      <Footer navigation={navigation} setNavigation={setNavigation} />
       <CursorIcon cursorPosition={cursorPosition} />
-    </div>
+    </main>
   );
 }
 

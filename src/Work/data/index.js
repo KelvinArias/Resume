@@ -17,9 +17,9 @@ import cecmcontact from "../../images/cecm/contact.jpg";
 import cecmTestimonials from "../../images/cecm/testimonials.jpg";
 import cecmTransac from "../../images/cecm/transac.jpg";
 // goCurrency
-import goCurrencyHome from "../../images/goCurrency/goCurrencyHome.jpg";
 import goCurrencyAir from "../../images/goCurrency/goCurrencyAir.jpg";
 import goCurrencyActionTime from "../../images/goCurrency/goCurrencyActionTime.jpg";
+import goCurrency2019 from "../../images/currency/currency2019.jpg";
 // Intelix
 import IntelixHome from "../../images/intelix/home.jpg";
 import IntelixAbout from "../../images/intelix/about.jpg";
@@ -86,7 +86,7 @@ const projectsInfo = [
       { src: cecmcontact, alt: "cecm contract" },
       { src: cecmTestimonials, alt: "cecm testimonials" },
       { src: cecmTransac, alt: "cecm transac" },
-      { src: goCurrencyHome, alt: "gocurrency home website" },
+      { src: goCurrency2019, alt: "gocurrency home 2019" },
       { src: goCurrencyAir, alt: "gocurrency air website" },
       { src: goCurrencyActionTime, alt: "gocurrency action time website" },
     ],
