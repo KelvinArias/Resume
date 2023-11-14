@@ -44,9 +44,9 @@ const projectsInfo = [
     portrait: { src: homeEquipco, alt: "equipcoMain home page" },
     images: [
       { src: equipcoHome, alt: "equipco website home page" },
-      { src: equipcoLogin, alt: "equipco login aplicantion" },
-      { src: equipcoMain, alt: "equipco aplication" },
-      { src: equipcoRequest, alt: "equipco request aplicantion" },
+      { src: equipcoLogin, alt: "equipco login application" },
+      { src: equipcoMain, alt: "equipco application" },
+      { src: equipcoRequest, alt: "equipco request application" },
       { src: equipco, alt: "equipco website" },
       { src: equipcoLetsTalk, alt: "equipco lets talk website" },
     ],
@@ -116,7 +116,7 @@ const projectsInfo = [
     position: "Web developer",
     description:
       "Intelix Synergy is a company dedicated to create web and app solutions for clients around the world",
-    skills: "PHP, Laraven, Javascript, HTML, Css, Sass",
+    skills: "PHP, Laravel, Javascript, HTML, Css, Sass",
     logo: { src: intelixLogo, alt: "Intelix synergy logo" },
   },
 ];

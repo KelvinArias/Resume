@@ -13,19 +13,19 @@ export default function ExpandableCard({
 }) {
   const [isCardExpanded, setIsCardExpanded] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
-  const [activeImageHadChaged, setActiveImageHadChaged] = useState(false);
+  const [activeImageHadChanged, setActiveImageHadChanged] = useState(false);
   const { companyName, images, date, position, description, skills, logo } =
     selectedProjectInfo || {};
 
   const handleScroll = (event) => {
     const delta = event.deltaY;
     const numImages = images.length;
-    setActiveImageHadChaged(true);
+    setActiveImageHadChanged(true);
     setActiveImage(
       (activeImage + numImages + (delta > 0 ? 1 : -1)) % numImages
     );
     setTimeout(() => {
-      setActiveImageHadChaged(false);
+      setActiveImageHadChanged(false);
     }, 500);
   };
 
@@ -54,7 +54,7 @@ export default function ExpandableCard({
             className={cx({
               isImageExpanded: isCardExpanded,
               isImageCollapsed: !isCardExpanded,
-              activeImageHadChaged,
+              activeImageHadChanged,
             })}
             alt={isCardExpanded ? images[activeImage].alt : alt}
             src={isCardExpanded ? images[activeImage].src : image}

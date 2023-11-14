@@ -5,7 +5,7 @@ import PhoneIcon from "../icons/phone";
 import Loader from "../icons/loader";
 import CheckIcon from "../icons/check";
 import CircleIcon from "../icons/circle";
-import { IN_PROCCESS, SUCCESS, ERROR } from "../const";
+import { IN_PROCESS, SUCCESS, ERROR } from "../const";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -35,7 +35,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setSubmitState(IN_PROCCESS);
+    setSubmitState(IN_PROCESS);
 
     try {
       const response = await fetch("http://localhost:5000/contact", {
@@ -142,7 +142,7 @@ const ContactForm = () => {
                 aria-label="Message"
               />
             </label>
-            {submitState === IN_PROCCESS ? (
+            {submitState === IN_PROCESS ? (
               <Loader />
             ) : (
               <button type="submit" className="submit">
