@@ -9,6 +9,7 @@ import "./styles.css";
 import cx from "classnames";
 import { HOME, CONTACT, WORK } from "../const";
 import CurveIcon from "../icons/curve";
+import PlayIcon from "../icons/play";
 extend({ LUTPass });
 
 function Moon({ direction }) {
@@ -77,17 +78,10 @@ const Home = ({ navigation, setNavigation, setModal, showModal }) => {
           <li>Javascript Tester</li>
           <li>+4 years work experience</li>
         </ul>
-        {/*<div className="play" onClick={() => setModal(true)}>
-          <svg
-            width="50px"
-            height="50px"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M9.5 15.584V8.416a.5.5 0 01.77-.42l5.576 3.583a.5.5 0 010 .842l-5.576 3.584a.5.5 0 01-.77-.42z" />
-          </svg>
+        <div className="play" onClick={() => setModal(true)}>
+          <PlayIcon />
           <p className="tooltip">Presentation</p>
-      </div>*/}
+        </div>
       </div>
       {showModal && (
         <div className="videoContainer" onClick={() => setModal(false)}>

@@ -47,9 +47,6 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        // Handle success
-        console.log("Form data sent successfully");
-        // Reset form data
         setFormData({
           name: "",
           lastName: "",
@@ -59,7 +56,6 @@ const ContactForm = () => {
         });
         setSubmitState(SUCCESS);
       } else {
-        // Handle error
         console.error("Failed to send form data");
         setSubmitState(ERROR);
       }
@@ -76,10 +72,10 @@ const ContactForm = () => {
           <div className="contactInfo">
             <div
               className="phone"
-              onClick={() => copyToClipboard("+1 954-931-4468")}
+              onClick={() => copyToClipboard("+1 786-894-7674")}
             >
               <PhoneIcon />
-              <p className="data">+1 954-931-4468</p>
+              <p className="data">+1 786-894-7674</p>
               <p className="phoneMessage">copied!</p>
             </div>
             <div

@@ -6,9 +6,10 @@ import "./App.css";
 import cx from "classnames";
 import CursorIcon from "./icons/cursor";
 import Footer from "./Footer";
+import SocialMedias from "./SocialMedias";
 import { HOME } from "./const";
 
-function App() {
+const App = () => {
   const [navigation, setNavigation] = useState(HOME);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [modalIsOpen, setModal] = useState(false);
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <main className="app">
+      <SocialMedias modalIsOpen />
       <section className={cx("content", navigation, { modalIsOpen })}>
         <Contact navigation={navigation} />
         <Home
@@ -44,6 +46,6 @@ function App() {
       <CursorIcon cursorPosition={cursorPosition} />
     </main>
   );
-}
+};
 
 export default App;

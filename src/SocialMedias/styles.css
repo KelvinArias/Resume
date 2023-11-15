@@ -1,0 +1,22 @@
+.social {
+  position: fixed;
+  padding: 20px;
+  z-index: 3;
+}
+
+.behind {
+  z-index: 1;
+}
+
+.socialIcon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+}
+
+@media screen and (max-width: 320px) {
+  .social {
+    padding-top: 10px;
+  }
+}
