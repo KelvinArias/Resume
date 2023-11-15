@@ -27,8 +27,8 @@ app.post("/contact", async (req, res) => {
   const { name, lastName, email, subject, message } = req.body;
 
   const mailOptions = {
-    from: "kelvin727631@gmail.com",
-    to: "kelvin727631@gmail.com",
+    from: process.env.email,
+    to: process.env.email,
     subject: "Webpage Form",
     text: `Name: ${name}\nLast Name: ${lastName}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}\n\n`,
   };

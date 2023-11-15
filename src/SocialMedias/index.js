@@ -12,6 +12,7 @@ const SocialMedias = ({ modalIsOpen }) => {
         className="socialIcon"
         href="https://github.com/KelvinArias"
         target="_blank"
+        rel="noreferrer"
       >
         <GitHubIcon />
       </a>
@@ -20,6 +21,7 @@ const SocialMedias = ({ modalIsOpen }) => {
         className="socialIcon"
         href="https://www.linkedin.com/in/kelvin-arias-cv21/"
         target="_blank"
+        rel="noreferrer"
       >
         <LinkedinIcon />
       </a>
