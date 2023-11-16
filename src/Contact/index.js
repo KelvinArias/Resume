@@ -38,7 +38,7 @@ const ContactForm = () => {
     setSubmitState(IN_PROCESS);
 
     try {
-      const response = await fetch("http://localhost:5000/contact", {
+      const response = await fetch("https://kresume.dev/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 const PORT = 5000;
 
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = ["http://localhost:3000", "https://kresume.dev/"];
 app.use(
   cors({
     origin: allowedOrigins,
