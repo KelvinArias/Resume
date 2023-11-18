@@ -11,6 +11,7 @@
 # production
 /build
 .htaccess
+app.yaml
 
 # misc
 .DS_Store

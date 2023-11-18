@@ -126,7 +126,6 @@
 
 .thanksContainer p {
   display: block;
-  margin-bottom: 0;
 }
 
 .thanksContainer .circle {
@@ -146,10 +145,6 @@
 
 .mb-10 {
   margin-bottom: 10px;
-}
-
-.thanksMessage {
-  margin: 0;
 }
 
 @media screen and (max-width: 495px) {

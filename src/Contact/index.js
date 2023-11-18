@@ -3,8 +3,9 @@ import "./styles.css";
 import EmailIcon from "../icons/email";
 import PhoneIcon from "../icons/phone";
 import Loader from "../icons/loader";
+import Message from "./Message";
 import CheckIcon from "../icons/check";
-import CircleIcon from "../icons/circle";
+import ErrorIcon from "../icons/error";
 import { IN_PROCESS, SUCCESS, ERROR } from "../const";
 
 const ContactForm = () => {
@@ -36,17 +37,14 @@ const ContactForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setSubmitState(IN_PROCESS);
+    const { name, lastName, email, subject, message } = formData;
 
     try {
-      const response = await fetch("https://kresume.dev/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
+      const response = await fetch(
+        `https://resume-405301.uw.r.appspot.com/contact?name=${name}&lastName=${lastName}&email=${email}&subject=${subject}&message=${message}`
+      );
+      console.log(response);
+      if (response.status === 200 && response.ok) {
         setFormData({
           name: "",
           lastName: "",
@@ -149,14 +147,18 @@ const ContactForm = () => {
         </Fragment>
       )}
       {submitState === SUCCESS && (
-        <div className="thanksContainer">
-          <div className="thanks">
-            <h2 className="mb-10">Thank You!</h2>
-            <p className="thanksMessage">Your message has been sent.</p>
-            <CheckIcon />
-            <CircleIcon />
-          </div>
-        </div>
+        <Message
+          header="Thank You!"
+          message="Your message has been sent."
+          icon={<CheckIcon />}
+        />
+      )}
+      {submitState === ERROR && (
+        <Message
+          header="Sorry!"
+          message="Your message hasn't been sent."
+          icon={<ErrorIcon />}
+        />
       )}
     </article>
   );

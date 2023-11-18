@@ -4,7 +4,7 @@ const Check = () => (
       <animate
         attributeName="stroke-dasharray"
         values="0,251.2;251.3,0"
-        dur="1s"
+        dur=".3s"
       />
     </circle>
   </svg>
