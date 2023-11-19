@@ -70,6 +70,7 @@ export default function ExpandableCard({
                   className={cx("projectPoint", {
                     active: activeImage === index,
                   })}
+                  onClick={() => setActiveImage(index)}
                 />
               ))}
             </div>
