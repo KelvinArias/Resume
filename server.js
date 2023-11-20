@@ -18,22 +18,17 @@ app.use(express.json());
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "kelvin727631@gmail.com",
-    pass: "pnxc tpvf xwdn xxip",
+    user: process.env.mail,
+    pass: process.env.password,
   },
-});
-
-// Define the route for /
-app.get("/", (req, res) => {
-  res.send("<h1>Hello</h1>");
 });
 
 app.get("/contact", async (req, res) => {
   const { name, lastName, email, subject, message } = req.query;
 
   const mailOptions = {
-    from: "kelvin727631@gmail.com",
-    to: "kelvin727631@gmail.com",
+    from: process.env.mail,
+    to: process.env.mail,
     subject: "Webpage Form",
     text: `Name: ${name}\nLast Name: ${lastName}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}\n\n`,
   };
