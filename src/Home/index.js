@@ -73,10 +73,10 @@ const Home = ({ navigation, setNavigation, setModal, showModal }) => {
           </p>
         </div>
         <ul className="abilities">
-          <li>Full stack developer</li>
+          <li>Full-Stack Developer</li>
           <li>M.E.R.N Expert</li>
           <li>Javascript Tester</li>
-          <li>+4 years work experience</li>
+          <li>+4 Years Work Experience</li>
         </ul>
         <div className="play" onClick={() => setModal(true)}>
           <PlayIcon />

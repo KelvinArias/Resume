@@ -43,7 +43,7 @@ const ContactForm = () => {
       const response = await fetch(
         `https://resume-405301.uw.r.appspot.com/contact?name=${name}&lastName=${lastName}&email=${email}&subject=${subject}&message=${message}`
       );
-      console.log(response);
+
       if (response.status === 200 && response.ok) {
         setFormData({
           name: "",
@@ -81,7 +81,7 @@ const ContactForm = () => {
               onClick={() => copyToClipboard("kelvin727631@gmail.com")}
             >
               <EmailIcon />
-              <p className="data">kelvin727631@gmail.com</p>
+              <p className="data">kelvin@kresume.dev</p>
               <p className="emailMessage">copied!</p>
             </div>
           </div>
@@ -136,16 +136,13 @@ const ContactForm = () => {
                 aria-label="Message"
               />
             </label>
-            {submitState === IN_PROCESS ? (
-              <Loader />
-            ) : (
-              <button type="submit" className="submit">
-                Submit
-              </button>
-            )}
+            <button type="submit" className="submit">
+              Submit
+            </button>
           </form>
         </Fragment>
       )}
+      {submitState === IN_PROCESS && <Loader />}
       {submitState === SUCCESS && (
         <Message
           header="Thank You!"
