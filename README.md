@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# My Personal Portfolio - kresume.dev
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to my personal portfolio website hosted on kresume.dev! I'm a passionate web developer with four years of experience, and this site serves as a showcase of my skills, projects, and achievements.
 
-## Available Scripts
+## Table of Contents
+- Presentation Video.
+- Personal Experiences and Projects over the years.
+- Contact Form
+- Social Medias
+- Skills
+  
+## Introduction
 
-In the project directory, you can run:
+Hello, I'm Kelvin Arias, a dedicated web developer with four years of experience in creating dynamic and responsive web applications. This portfolio is designed to provide an overview of my skills, experience, and the projects I have worked on.
 
-### `npm start`
+Visit my portfolio: [kresume.dev](https://kresume.dev)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Project Showcase:** View details and demos of the projects I've worked on.
+- **Skills:** Explore my proficiency in various web development technologies.
+- **Contact Information:** Find my social media links and get in touch.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- HTML5
+- CSS3
+- JavaScript
+- React
+- Node
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To explore my portfolio locally, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    -  git clone [https://github.com/your-username/kresume.dev.git](https://github.com/KelvinArias/resume.git)
+    -  npm i
+    -  npm run start
+    -  node ./server.js
+    ```
 
-### `npm run eject`
+2. Remember create the file .env and set the email and password that you want to use in order to make nodemailer works.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Screenshots
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Screenshot Contact](https://github.com/KelvinArias/Resume/assets/35942190/88be4f04-ea9f-4bf6-b6a5-42001ab80261).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Screenshot Home](https://github.com/KelvinArias/Resume/assets/35942190/045a1596-1df4-4e37-b4d5-3fb626dd1c30).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Screenshot Work](https://github.com/KelvinArias/Resume/assets/35942190/5e413668-d5ac-439b-9e9f-c2f8ddf56c32).
 
-## Learn More
+## Contact
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Feel free to connect with me on social media:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [LinkedIn](https://www.linkedin.com/in/kelvin-arias-cv21/)
+- [GitHub](https://github.com/KelvinArias)
 
-### Code Splitting
+For any inquiries, you can also email me at kelvin@kresume.dev 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for visiting my portfolio! 😊
