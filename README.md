@@ -46,11 +46,11 @@ To explore my portfolio locally, follow these steps:
 
 ## Screenshots
 
-![Screenshot Contact](https://github.com/KelvinArias/Resume/assets/35942190/88be4f04-ea9f-4bf6-b6a5-42001ab80261).
+![Screenshot Contact](https://raw.githubusercontent.com/KelvinArias/Resume/master/src/images/shots/contact.png).
 
-![Screenshot Home](https://github.com/KelvinArias/Resume/assets/35942190/045a1596-1df4-4e37-b4d5-3fb626dd1c30).
+![Screenshot Home](https://raw.githubusercontent.com/KelvinArias/Resume/master/src/images/shots/home.png).
 
-![Screenshot Work](https://github.com/KelvinArias/Resume/assets/35942190/5e413668-d5ac-439b-9e9f-c2f8ddf56c32).
+![Screenshot Work](https://raw.githubusercontent.com/KelvinArias/Resume/master/src/images/shots/work.png).
 
 ## Contact
 
