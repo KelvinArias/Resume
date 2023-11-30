@@ -9,7 +9,7 @@ import "./styles.css";
 import cx from "classnames";
 import { HOME, CONTACT, WORK } from "../const";
 import CurveIcon from "../icons/curve";
-import PlayIcon from "../icons/play";
+//import PlayIcon from "../icons/play";
 extend({ LUTPass });
 
 function Moon({ direction }) {
@@ -78,10 +78,12 @@ const Home = ({ navigation, setNavigation, setModal, showModal }) => {
           <li>Javascript Tester</li>
           <li>+4 Years Work Experience</li>
         </ul>
+        {/*
         <div className="play" onClick={() => setModal(true)}>
           <PlayIcon />
           <p className="tooltip">Presentation</p>
         </div>
+        */}
       </div>
       {showModal && (
         <div className="videoContainer" onClick={() => setModal(false)}>
