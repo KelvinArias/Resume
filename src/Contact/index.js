@@ -43,8 +43,8 @@ const ContactForm = () => {
       body.set("subject", formData.subject.trim());
       body.set("message", formData.message.trim());
       body.set("company", formData.company.trim()); // honeypot
-
-      const response = await fetch("/contact.php", {
+      console.log("Submitting form data:", body.toString());
+      const response = await fetch("https://kresume.dev/contact.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
@@ -54,7 +54,7 @@ const ContactForm = () => {
       });
 
       const data = await response.json().catch(() => null);
-
+      console.log("Received response:", data, response);
       if (response.ok && data && data.ok) {
         setFormData({
           name: "",

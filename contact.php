@@ -27,7 +27,7 @@ $SMTP_SECURE = 'tls';                // 'tls' or 'ssl'
 $SMTP_USER   = 'kelvin@kresume.dev';    // your domain mailbox
 $SMTP_PASS   = getenv('SMTP_PASS'); // loads from .env
 
-$TO_EMAIL    = 'contact@kresume.dev';    // send to your domain mailbox (will forward to Gmail)
+$TO_EMAIL    = 'kelvin@kresume.dev';    // send to your domain mailbox (will forward to Gmail)
 $TO_NAME     = 'Site Contact';           // label shown in the inbox
 
 $ALLOWED_ORIGINS  = ['https://kresume.dev', 'http://kresume.dev']; // update if needed
