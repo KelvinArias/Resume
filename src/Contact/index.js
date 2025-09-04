@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import { useState, Fragment } from "react";
 import "./styles.css";
 import EmailIcon from "../icons/email";
 import PhoneIcon from "../icons/phone";
@@ -11,55 +11,67 @@ import { IN_PROCESS, SUCCESS, ERROR } from "../const";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
-    lastName: "",
+    lastname: "",
     email: "",
     subject: "",
     message: "",
+    company: "", // honeypot (must remain empty)
   });
   const [submitState, setSubmitState] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const copyToClipboard = (textToCopy) => {
     navigator.clipboard
       .writeText(textToCopy)
-      .then(() => {
-        console.log(textToCopy);
-      })
-      .catch((err) => {
-        console.error("Failed to copy text:", err);
-      });
+      .catch((err) => console.error("Failed to copy text:", err));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setSubmitState(IN_PROCESS);
-    const { name, lastName, email, subject, message } = formData;
 
     try {
-      const response = await fetch(
-        `https://resume-405301.uw.r.appspot.com/contact?name=${name}&lastName=${lastName}&email=${email}&subject=${subject}&message=${message}`
-      );
+      // Build x-www-form-urlencoded body matching PHP field names
+      const body = new URLSearchParams();
+      body.set("name", formData.name.trim());
+      body.set("lastname", formData.lastname.trim());
+      body.set("email", formData.email.trim());
+      body.set("subject", formData.subject.trim());
+      body.set("message", formData.message.trim());
+      body.set("company", formData.company.trim()); // honeypot
 
-      if (response.status === 200 && response.ok) {
+      const response = await fetch("/contact.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        body: body.toString(),
+        credentials: "same-origin",
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (response.ok && data && data.ok) {
         setFormData({
           name: "",
-          lastName: "",
+          lastname: "",
           email: "",
           subject: "",
           message: "",
+          company: "",
         });
         setSubmitState(SUCCESS);
       } else {
-        console.error("Failed to send form data");
+        console.error("Failed to send form data", data);
         setSubmitState(ERROR);
       }
-    } catch (catchError) {
+    } catch (err) {
+      console.error("Failed to send form data", err);
       setSubmitState(ERROR);
-      console.error("Failed to send form data", catchError);
     }
   };
 
@@ -78,14 +90,15 @@ const ContactForm = () => {
             </div>
             <div
               className="email"
-              onClick={() => copyToClipboard("kelvin727631@gmail.com")}
+              onClick={() => copyToClipboard("kelvin@kresume.dev")}
             >
               <EmailIcon />
               <p className="data">kelvin@kresume.dev</p>
               <p className="emailMessage">copied!</p>
             </div>
           </div>
-          <form onSubmit={handleSubmit} className="form">
+
+          <form onSubmit={handleSubmit} className="form" noValidate>
             <label className="name">
               <span>Name</span>
               <input
@@ -95,17 +108,23 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
                 aria-label="Name"
+                autoComplete="name"
               />
             </label>
+
             <label className="lastName">
               <span>Last Name</span>
               <input
                 type="text"
-                name="lastName"
-                value={formData.lastName}
+                name="lastname" // <-- exact key expected by PHP
+                value={formData.lastname}
                 onChange={handleChange}
+                required
+                aria-label="Last Name"
+                autoComplete="family-name"
               />
             </label>
+
             <label className="email">
               <span>Email</span>
               <input
@@ -115,8 +134,10 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
                 aria-label="Email"
+                autoComplete="email"
               />
             </label>
+
             <label className="subject">
               <span>Subject</span>
               <input
@@ -124,8 +145,11 @@ const ContactForm = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
+                required
+                aria-label="Subject"
               />
             </label>
+
             <label className="message">
               <span>Message</span>
               <textarea
@@ -136,12 +160,36 @@ const ContactForm = () => {
                 aria-label="Message"
               />
             </label>
-            <button type="submit" className="submit">
-              Submit
+
+            {/* Honeypot field: must stay empty. Hide visually but keep in DOM. */}
+            <input
+              type="text"
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+              tabIndex="-1"
+              autoComplete="off"
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                left: "-10000px",
+                width: "1px",
+                height: "1px",
+                opacity: 0,
+              }}
+            />
+
+            <button
+              type="submit"
+              className="submit"
+              disabled={submitState === IN_PROCESS}
+            >
+              {submitState === IN_PROCESS ? "Sending..." : "Submit"}
             </button>
           </form>
         </Fragment>
       )}
+
       {submitState === IN_PROCESS && <Loader />}
       {submitState === SUCCESS && (
         <Message

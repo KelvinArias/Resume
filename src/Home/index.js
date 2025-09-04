@@ -76,7 +76,7 @@ const Home = ({ navigation, setNavigation, setModal, showModal }) => {
           <li>Full-Stack Developer</li>
           <li>M.E.R.N Expert</li>
           <li>Javascript Tester</li>
-          <li>+4 Years Work Experience</li>
+          <li>+5 Years Work Experience</li>
         </ul>
         {/*
         <div className="play" onClick={() => setModal(true)}>
