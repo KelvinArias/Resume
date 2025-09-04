@@ -15,7 +15,6 @@ const ContactForm = () => {
     email: "",
     subject: "",
     message: "",
-    company: "", // honeypot (must remain empty)
   });
   const [submitState, setSubmitState] = useState("");
 
@@ -42,7 +41,6 @@ const ContactForm = () => {
       body.set("email", formData.email.trim());
       body.set("subject", formData.subject.trim());
       body.set("message", formData.message.trim());
-      body.set("company", formData.company.trim()); // honeypot
       console.log("Submitting form data:", body.toString());
       const response = await fetch("https://kresume.dev/contact.php", {
         method: "POST",
@@ -62,7 +60,6 @@ const ContactForm = () => {
           email: "",
           subject: "",
           message: "",
-          company: "",
         });
         setSubmitState(SUCCESS);
       } else {
@@ -160,24 +157,6 @@ const ContactForm = () => {
                 aria-label="Message"
               />
             </label>
-
-            {/* Honeypot field: must stay empty. Hide visually but keep in DOM. */}
-            <input
-              type="text"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              tabIndex="-1"
-              autoComplete="off"
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                left: "-10000px",
-                width: "1px",
-                height: "1px",
-                opacity: 0,
-              }}
-            />
 
             <button
               type="submit"

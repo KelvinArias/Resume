@@ -2,10 +2,10 @@
 /**
  * contact.php — Hostinger (PHP) contact form handler
  * - Sends via SMTP using your domain mailbox (Titan/Hostinger)
- * - Honeypot + basic rate limiting + robust validation
+ * basic rate limiting + robust validation
  *
  * Expected POST fields:
- *  name, lastname, email, subject, message, company (honeypot)
+ *  name, lastname, email, subject, message
  */
 
 // -----------------------------
@@ -86,13 +86,7 @@ $fields = [
   'email'    => trim($_POST['email']    ?? ''),
   'subject'  => trim($_POST['subject']  ?? ''),
   'message'  => trim($_POST['message']  ?? ''),
-  'company'  => trim($_POST['company']  ?? ''), // honeypot
 ];
-
-// Honeypot check
-if ($fields['company'] !== '') {
-  json_exit(true, 'Thanks!'); // pretend success for bots
-}
 
 // Validate
 if ($fields['name'] === '' || mb_strlen($fields['name']) > 100) {
