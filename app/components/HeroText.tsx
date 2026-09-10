@@ -1,0 +1,33 @@
+// Hero Text Component
+
+interface HeroTextProps {
+  title: string;
+  subtitle?: string | null;
+  paragraph: string;
+}
+
+export default function HeroText({ title, subtitle, paragraph }: Readonly<HeroTextProps>) {
+  return (
+    <div className="flex flex-col gap-6 flex-1 justify-center items-center lg:items-start">
+      <div className="flex flex-col gap-3">
+        <div className="flex items-baseline gap-3">
+          <h1 className="text-7xl font-bold text-white leading-none">{title}</h1>
+          <span className="text-5xl text-cyan-400">.</span>
+        </div>
+        {/* Accent line */}
+        <div className="flex gap-2 items-center">
+          <div className="w-16 h-1 bg-linear-to-r from-cyan-400 to-transparent rounded-full" />
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 max-w-md lg:max-w-xs">
+        {subtitle && (
+          <h2 className="text-2xl font-semibold text-white">{subtitle}</h2>
+        )}
+        <p className="text-base leading-relaxed text-white/70 text-center lg:text-left">
+          {paragraph}
+        </p>
+      </div>
+    </div>
+  );
+}
