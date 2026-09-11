@@ -14,10 +14,7 @@ export default function HeroText({ title, subtitle, paragraph }: Readonly<HeroTe
           <h1 className="text-7xl font-bold text-white leading-none">{title}</h1>
           <span className="text-5xl text-cyan-400">.</span>
         </div>
-        <div className="relative h-[4px] w-[78px]">
-          <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-[#34CFFF] via-[#34CFFF]/70 to-transparent" />
-          <div className="absolute left-0 top-[2px] h-px w-[66px] bg-white/20 blur-[0.5px]" />
-        </div>
+        <div className="hero-brush-line" />
       </div>
 
       <div className="flex flex-col gap-4 max-w-md lg:max-w-xs">
