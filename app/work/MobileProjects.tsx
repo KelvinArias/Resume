@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Code2, ExternalLink } from 'lucide-react';
 
 type Project = {
+  id: number;
   year: string;
   title: string;
   description: string;
-  image: string;
+  images: string[];
   tags: string[];
   githubUrl?: string;
   liveUrl?: string;
@@ -78,7 +79,7 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
                 }}
               >
                 <img
-                  src={project.image}
+                  src={project.images[0]}
                   alt={project.title}
                   className="h-full w-full rounded-lg object-cover"
                 />
